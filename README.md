@@ -1,6 +1,19 @@
-# Hello World! Easter Challenge
+# Hello World! Easter Cards
 
-### Images to fill the grid with
+### Description
+
+Denna sida är landningssida för digitalt påskpyssel med Hello World! Påsken 2020. 
+
+### Setup
+
+* Hosting via Github Pages på https://helloworldsweden.github.io/easter-cards/ 
+* Peka om domän xxx.helloworld.se till ovan sida
+
+### Resources
+
+##### Gifs
+
+Att inkludera på sidan
 
 SENDING LOVE
 https://media.giphy.com/media/gGrZuGzl6E00RUPFcE/giphy.gif
