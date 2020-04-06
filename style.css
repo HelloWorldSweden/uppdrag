@@ -1,0 +1,117 @@
+/* CSS files add styling rules to your content */
+
+
+h1 {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 4rem;
+  color: #F29F4A;
+}
+
+body {
+  background-color: #083549;
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+/* GRID LAYOUT*/
+
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(330px, 1fr));
+  margin-bottom: 20px;
+}
+
+.card {
+  color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  font-size: 120%;
+}
+
+.card-info {
+  height: 330px;
+  grid-column: span 2;
+}
+
+.card-form {
+  grid-column: span 2;
+  height: auto;
+}
+
+.card-light-blue { background-color: #46AFB8; }
+.card-dark-blue { background-color: #057190; }
+.card-orange { background-color: #F29F4A; }
+
+.card-white {
+  background-color: #fff;
+  color: #057190;
+}
+
+.card-hello{
+  background-color: #057190; /*dark blue*/
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  height: 330px;
+}
+
+#card-display .card-hello:nth-child(even) {
+  background-color: #46AFB8; /*light blue*/
+}
+
+.card-hello:hover {
+  transform: rotateY(180deg);
+}
+
+.card-front{
+  position: absolute;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card-back{
+  position: absolute;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transform: rotateY(180deg);
+}
+
+.card img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.cool-button {
+  background-color: #fff; /* Green */
+  border: none;
+  color: #057190;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 10px;
+    transition: color .15s ease-in-out,
+      background-color .15s ease-in-out,
+      border-color .15s ease-in-out,
+      box-shadow .15s ease-in-out;
+}
+
+.badge-light {
+    color: #057190;
+    background-color: #f8f9fa;
+}

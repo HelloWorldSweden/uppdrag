@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello Easter</title>
+    <link rel="icon" href="https://cdn.glitch.com/5dffffdf-0b9a-4d0f-b482-d9e3fb43768b%2Fchicken.png?v=1586117991416" type="image/gif">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    
+    <!-- enable sharing on Facebook -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/sv_SE/sdk.js#xfbml=1&version=v6.0"></script>
+    
+  </head>  
+  <body>
+    
+    <h1> 
+      Hello World! Easter Challenge 🐥 <span class="badge badge-light">Prototyp</span>
+    </h1>
+    
+    <div class="wrapper">
+      <div class="card card-info card-dark-blue">
+        <h2>
+          Heeeeello!
+        </h2>
+        <p>
+          Nu är den här, påsken! I år kanske den ser lite annorlunda åt för många, då vi håller oss ifrån varandra för att skydda varandra. Ta chansen och skicka en påskhälsning till någon som du gillar men som du inte kommer att vara med just i påsk.
+        </p>
+        <p>
+          Här finns färdiga mallar - utgå ifrån någon av dessa eller skapa helt fritt! Bara fantasin sätter gränser 🙌. När du är klar fyller du i formuläret här nere så visas din hälsninga här och din kära får ett mail.
+        </p>
+        <p>
+          Vi ska även ha lite mer tips och trix här, såklart!  
+        </p>
+      </div>
+      <div class="card card-orange">
+        <h2>
+          Mallar till Påskhälsningar på Scratch
+        </h2>
+        <p>
+          <a class="cool-button" href="https://scratch.mit.edu/projects/382867355" target="_blank">Ett projekt i Scratch</a>
+        </p>
+        <p>
+          <a class="cool-button" href="https://scratch.mit.edu/projects/115222477" target="_blank">Ett annat projekt i Scratch</a>
+        </p>
+        <p>
+          Våra vänner på Kodcentrum har gjort en <a style="color:#fff" href="https://www.kodboken.se/start/skapa-berattelser/uppgifter-i-scratch/digitalt-vykort?chpt=0">tutorial på hur man kan göra vykort i Scratch</a>.
+        </p>
+      </div>
+    </div>
+    
+    <div id="card-display" class="wrapper" sheetsu="https://sheetsu.com/apis/v1.0su/267d8df9d0e1" sheetsu-limit="6" sheetsu-sheet="DATA">
+      <div class="card card-hello">
+        <div class="card-front">
+          <h2>
+            Glad Påsk {{recipient}}
+          </h2>
+        </div>
+        <div class="card-back">
+          <h2>
+            önskar {{participant}}
+          </h2>
+          <a class="cool-button" href="{{fullscreen-url}}" target="_blank">Se hälsning</a>
+          <div class="fb-share-button" data-href="{{url}}" data-layout="button" data-size="large" style="margin: 20px;"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fscratch.mit.edu%2Fprojects%2F382867355&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore" style="color:#fff">Dela på Facebook</a></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wrapper" id="skicka-in">
+      <div class="card">
+        <img src="https://media.giphy.com/media/gGrZuGzl6E00RUPFcE/giphy.gif" width="300" height="300"/>
+      </div>
+      <div class="card card-info card-orange">
+        <h2>
+          Skicka din egna påskhälsning!
+        </h2>
+        <p>
+          Såhär gör du för att skicka din påskhälsning. 
+          <ol>
+            <li>Börja Scratcha - välj mellan mallarna (eller hitta på ett helt eget påskprojekt)</li>
+            <li>När du är klar, kopiera länken till Scratchprojektet (tydliga instruktioner för hur länken ska se ut behövs här!) </li>
+            <li>Fyll i formuläret nedan för att skicka din digitala påskhälsning till en som du gillar! </li>
+            <li>Nu är påskhälsningen påväg! Och den dyker upp på denna sida bara du laddar om den :-)</li>
+          </ol>
+        </p>
+      </div>
+      <div class="card card-form card-white">
+        <div class="typeform-widget" data-url="https://helloworldse.typeform.com/to/K7ieJ0" data-transparency="100" style="width: 100%; height: 500px;"></div>
+      </div>
+      <div class="card">
+        <img src="https://media.giphy.com/media/h3cOq6DB2qzUcwm9e7/giphy.gif" width="300" height="300"/>
+      </div>
+    </div>
+  
+    <!-- TYPEFORM TO SUBMIT ANSWERS -->
+    <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"> powered by <a href="https://admin.typeform.com/signup?utm_campaign=K7ieJ0&utm_source=typeform.com-01DPS0N4YQ53KYXR3ENAQP40ZG-free&utm_medium=typeform&utm_content=typeform-embedded-poweredbytypeform&utm_term=EN" style="color: #999" target="_blank">Typeform</a></div>
+    
+    <!-- SHEETSU TO IMPORT DATA -->
+    <script src="//load.sheetsu.com"></script>
+  
+  <footer>
+    <div class="card card-dark-blue">
+      <p>
+        Hello World! är en allmännyttig ideell förening som med läger och helgmeetups uppmuntrar och sprider intresse och kunskap om naturvetenskap, teknik, innovation och konst med digitala verktyg. Vi tänder digitala stjärnor och med stipendier, lånedatorer, inkomstbaserade avgifter, fria resor till våra läger och riktade satsningar bidrar vi till integration och ökad andel tjejer och gör digitalt skapande lättillgängligt för alla barn och ungdomar oavsett bakgrund och förutsättningar.
+      </p>
+      <a class="cool-button" href="https://glitch.com/edit/#!/hello-easter-prototype" role="button" aria-pressed="true" target="_blank">
+        @Glitch
+      </a>
+    </div>
+  </footer>
+  
+  </body>
+</html>
