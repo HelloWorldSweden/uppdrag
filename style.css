@@ -34,6 +34,10 @@ body {
   grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
 }
 
+#card-display {
+  margin-bottom: 3rem;
+}
+
 .card {
   color: #fff;
   padding: 2rem;
