@@ -118,28 +118,32 @@ body {
 }
 
 .greeting-from {
+  opacity: 0;
   margin: 0rem 0rem 1rem 0rem;
   font-size: 150%;
 }
 
 .greeting-display {
   opacity: 0;
-  transition: all .2s ease-in-out;
+  transition: all .4s ease-in-out;
 }
-
+.card-hello:hover .greeting-from {
+  opacity: 1;
+  transition: all .4s ease-in-out .5s;
+}
 .card-hello:hover .greeting-display {
   opacity: 1;
-  transition: all .2s ease-in-out .4s;
+  transition: all .4s ease-in-out 1s;
 }
 
 .card-hello:hover .greeting {
   font-size: 280%;
-  transition: all .2s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 .card-hello:hover {
   background-color: #F29F4A;
-  transition: all .2s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 .cool-button {
