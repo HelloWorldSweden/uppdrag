@@ -4,7 +4,8 @@
 h1 {
   font-family: helvetica, arial, sans-serif;
   font-size: 4rem;
-  color: #F29F4A;
+  color: #fff;
+  margin-top: 5rem;
 }
 
 body {
@@ -43,6 +44,7 @@ body {
 .card-light-blue { background-color: #46AFB8; }
 .card-dark-blue { background-color: #057190; }
 .card-orange { background-color: #F29F4A; }
+.card-pink { background-color: #F16868; }
 
 .card-white {
   background-color: #fff;
@@ -94,12 +96,21 @@ body {
 
 .greeting-front {
   margin: 1rem 0rem;
-  font-size: 200%;
+  font-size: 250%;
 }
 
 .greeting-back {
   margin: 0rem 0rem 1rem 0rem;
   font-size: 150%;
+}
+
+.greeting-display {
+  display: none;
+  transition: all 2s linear;
+}
+
+.card-hello:hover .greeting-display {
+  display: block;
 }
 
 .cool-button {
