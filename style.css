@@ -28,12 +28,21 @@ body {
   color: #fff;
   border-radius: 20px;
   padding: 30px;
-  font-size: 120%;
+  font-size: 110%;
 }
 
 .card-info {
   grid-column: span 2;
   min-height: 300px;
+}
+
+.card-footer {
+  grid-column: span 3;
+  font-size: 80%;
+  color: #557b86;
+}
+.card-footer a {
+  color: #557b86;
 }
 
 .card-form {
@@ -64,10 +73,6 @@ body {
   color: #fff;
 }
 
-.card-hello:hover {
-  //transform: rotateY(180deg);
-}
-
 .card-front {
   position: absolute;
   backface-visibility: hidden;
@@ -85,7 +90,6 @@ body {
 
 .card-back .cool-button, .card-back a {
   margin: 0.5rem 3.5rem;
-  
 }
 
 .card img {
@@ -94,23 +98,34 @@ body {
   display: block;
 }
 
-.greeting-front {
+.greeting {
   margin: 1rem 0rem;
   font-size: 250%;
 }
 
-.greeting-back {
+.greeting-from {
   margin: 0rem 0rem 1rem 0rem;
   font-size: 150%;
 }
 
 .greeting-display {
-  display: none;
-  transition: all 2s linear;
+  opacity: 0;
+  transition: all .2s ease-in-out;
 }
 
 .card-hello:hover .greeting-display {
-  display: block;
+  opacity: 1;
+  transition: all .2s ease-in-out .4s;
+}
+
+.card-hello:hover .greeting {
+  font-size: 280%;
+  transition: all .2s ease-in-out;
+}
+
+.card-hello:hover {
+  background-color: #F29F4A;
+  transition: all .2s ease-in-out;
 }
 
 .cool-button {

@@ -45,6 +45,9 @@
           Påskkort i Scratch
         </h2>
         <p>
+          Här finns ett påskkort som du kan utgå ifrån när du pysslar ditt egna. 
+        </p>
+        <p>
           <a class="cool-button" href="https://scratch.mit.edu/projects/382867355" target="_blank">Mall för påskkort</a>
         </p>
         <p>
@@ -61,7 +64,7 @@
             <li> <a style="color:#fff; font-weight: 600" href="https://scratch.mit.edu/join">Skapa ett konto på Scratch</a> (om du inte redan har det) </li>
             <li> Börja Scratcha - utgå ifrån mallen och guiden ovan (eller hitta på ett helt eget påskprojekt) </li>
             <li> När du är klar - kopiera länken till Scratchprojektet </li>
-            <li> Fyll i <a style="color:#fff; font-weight: 600" href="#skicka-in">formuläret nedan </a> för att skicka ditt påskkort till någon du gillar </li>
+            <li> Fyll i <a style="color:#fff; font-weight: 600" href="#skicka-in">formuläret på denna sida</a> för att skicka ditt påskkort till någon du gillar </li>
             <li> Nu är påskkortet skickat! Det finns också på denna sida (ladda om för att se det)</li>
           </ol>
         </p>
@@ -75,17 +78,19 @@
         </p>
       </div>
     </div>
-    
+    <h2 style="color:#fff">
+      Påskkort som skickats
+    </h2>
     <div class="wrapper" id="card-display" sheetsu="https://sheetsu.com/apis/v1.0su/267d8df9d0e1" sheetsu-sheet="DATA" sheetsu-search='{"web":"ja"}'>
       <div class="card card-hello">
         <div style="margin:3rem">
-          <h2 class="greeting-front">
+          <h2 class="greeting">
             Glad Påsk {{recipient}}
           </h2>
-          <h2 class="greeting-back">
-            önskar {{participant}}
-          </h2>
           <div class="greeting-display">
+            <h2 class="greeting-from">
+              önskar {{participant}}
+            </h2>
             <a class="cool-button" href="{{fullscreen-url}}" target="_blank">Se hälsning</a>
             <div class="fb-share-button" data-href="{{url}}" data-layout="button" data-size="large" style="margin-top:1rem;"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fscratch.mit.edu%2Fprojects%2F382867355&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore" style="color:#fff">Dela på Facebook</a></div>
           </div>
@@ -122,10 +127,15 @@
         </div>
         <img src="https://helloworld.se/wp-content/uploads/2016/04/Small_white_transparent.png" height="72px"/>
       </div>
+      <div class="card-footer">
+        <p>
+          Vi raderar mailadressen som du matar in i formuläret efter att mailet har skickats. Namn i hälsningen och länken till projektet kommer att sparas. Om du vill att vi tar bort det, är det bara att maila <a href="mailto:info@helloworld.se" style="color: #557b86;">info@helloworld.se</a> så löser vi det!
+        </p>
+      </div>
     </div>
   
     <!-- TYPEFORM TO SUBMIT ANSWERS -->
-    <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"> powered by <a href="https://admin.typeform.com/signup?utm_campaign=K7ieJ0&utm_source=typeform.com-01DPS0N4YQ53KYXR3ENAQP40ZG-free&utm_medium=typeform&utm_content=typeform-embedded-poweredbytypeform&utm_term=EN" style="color: #999" target="_blank">Typeform</a></div>
+    <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
     
     <!-- SHEETSU TO IMPORT DATA -->
     <script src="//load.sheetsu.com"></script>
