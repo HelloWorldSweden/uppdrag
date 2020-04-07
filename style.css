@@ -17,10 +17,10 @@ body {
 
 .wrapper {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(330px, 1fr));
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .card {
@@ -31,8 +31,8 @@ body {
 }
 
 .card-info {
-  height: 330px;
   grid-column: span 2;
+  min-height: 300px;
 }
 
 .card-form {
@@ -53,34 +53,53 @@ body {
   background-color: #057190; /*dark blue*/
   transform-style: preserve-3d;
   transition: all 1s ease;
-  height: 330px;
+  height: 360px;
+  padding: 0px;
 }
 
 #card-display .card-hello:nth-child(even) {
   background-color: #46AFB8; /*light blue*/
+  color: #fff;
 }
 
 .card-hello:hover {
   transform: rotateY(180deg);
 }
 
-.card-front{
+.card-front {
   position: absolute;
   backface-visibility: hidden;
   overflow: hidden;
+  width: 100%;
 }
 
-.card-back{
+.card-back {
   position: absolute;
   backface-visibility: hidden;
   overflow: hidden;
   transform: rotateY(180deg);
+  width: 100%;
 }
 
-.card img{
+.card-back .cool-button, .card-back a {
+  margin: 0.5rem 3.5rem;
+  
+}
+
+.card img {
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+
+.greeting-front {
+  margin: 3.5rem;
+  font-size: 300%;
+}
+
+.greeting-back {
+  margin: 3.5rem 3.5rem 1rem 3.5rem;
+  font-size: 200%;
 }
 
 .cool-button {
@@ -114,4 +133,11 @@ body {
 .badge-light {
     color: #057190;
     background-color: #f8f9fa;
+}
+
+#social-media-container {
+  display: flex;
+}
+#social-media-container a {
+  margin: 0.5rem;
 }
