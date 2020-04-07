@@ -63,7 +63,7 @@ body {
 }
 
 .card-hello:hover {
-  transform: rotateY(180deg);
+  //transform: rotateY(180deg);
 }
 
 .card-front {
@@ -93,13 +93,13 @@ body {
 }
 
 .greeting-front {
-  margin: 3.5rem;
-  font-size: 300%;
+  margin: 1rem 0rem;
+  font-size: 200%;
 }
 
 .greeting-back {
-  margin: 3.5rem 3.5rem 1rem 3.5rem;
-  font-size: 200%;
+  margin: 0rem 0rem 1rem 0rem;
+  font-size: 150%;
 }
 
 .cool-button {
