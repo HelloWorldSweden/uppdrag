@@ -6,12 +6,16 @@ Denna sida är landningssida för digitalt påskpyssel med Hello World! Påsken 
 
 ### Setup
 
-* Hosting via Github Pages på https://helloworldsweden.github.io/easter-cards/ 
-* Peka om domän xxx.helloworld.se till ovan sida
+* Hosting via Github Pages (https://helloworldsweden.github.io/easter-cards/)
+* Peka om domän create.helloworld.se till denna sida
 
 ### Resources
 
-##### Gifs
+#### Pdfs
+
+Guide.pdf: Guide till Scratch-mallen
+
+#### Gifs
 
 Att inkludera på sidan
 
