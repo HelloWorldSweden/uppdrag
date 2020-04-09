@@ -31,9 +31,8 @@ body {
 
 .wrapper {
   display: grid;
-  //grid-gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
+  //grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
 }
 
 #card-display {
@@ -44,11 +43,11 @@ body {
   color: #fff;
   padding: 2rem;
   font-size: 110%;
+  min-height: 360px;
 }
 
 .card-info {
   grid-column: span 2;
-  min-height: 300px;
 }
 
 .card-footer {
@@ -80,13 +79,21 @@ body {
 .card-hello{
   background-color: #057190; /*dark blue*/
   //transform-style: preserve-3d;
-  min-height: 300px;
   padding: 0px;
+  min-height: 400px;
 }
 
 #card-display .card-hello:nth-child(even) {
   background-color: #46AFB8; /*light blue*/
-  color: #fff;
+}
+
+#card-display .card-hello:hover:nth-child(even) {
+  background-color: #F29F4A; 
+}
+
+.card-hello:hover {
+  background-color: #F16868;
+  transition: all .4s ease-in-out;
 }
 
 .card-front {
@@ -129,10 +136,12 @@ body {
   opacity: 0;
   transition: all .4s ease-in-out;
 }
+
 .card-hello:hover .greeting-from {
   opacity: 1;
   transition: all .4s ease-in-out .5s;
 }
+
 .card-hello:hover .greeting-display {
   opacity: 1;
   transition: all .4s ease-in-out 1s;
@@ -140,11 +149,6 @@ body {
 
 .card-hello:hover .greeting {
   font-size: 280%;
-  transition: all .4s ease-in-out;
-}
-
-.card-hello:hover {
-  background-color: #F29F4A;
   transition: all .4s ease-in-out;
 }
 
