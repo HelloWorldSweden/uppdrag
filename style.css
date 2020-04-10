@@ -35,7 +35,7 @@ body {
   //grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
 }
 
-#card-display-2{
+#card-display{
   margin-bottom: 3rem;
 }
 
@@ -83,11 +83,11 @@ body {
   min-height: 400px;
 }
 
-.card-display .card-hello:nth-child(even) {
+#card-display .card-hello:nth-child(even) {
   background-color: #46AFB8; /*light blue*/
 }
 
-.card-display .card-hello:hover:nth-child(even) {
+#card-display .card-hello:hover:nth-child(even) {
   background-color: #F29F4A; 
 }
 
