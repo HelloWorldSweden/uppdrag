@@ -1,0 +1,75 @@
+body {
+  font-family: "Nunito";
+  margin: 0px;
+}
+
+
+#gameBox{
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameBox p{
+    font-size: 70px;
+    z-index: 2;
+}
+
+#clock{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    clip-path: polygon(50% 0, 50% 50%, 50% 0);
+}
+
+#scoreBox{
+    height: 200px;
+    width: 200px;
+    justify-content: left;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+#scoreBox p{
+    font-size: 38px;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#settings{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+}
+
+#settings div{
+    height: 200px;
+    width: 300px;
+    flex-direction: column-reverse;
+    margin-right: 10px ;
+}
+
+#settings button{
+    background-color: rgb(22, 156, 156);
+    color: whitesmoke;
+    border: none;
+    width: 120px;
+    height: 60px;
+    font-size: 1.5rem;
+}
+
+#settings button:hover{
+    color:black;
+}
+
+#settings button.selected{
+    background-color: rgb(17, 102, 102);
+}
