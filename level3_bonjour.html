@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Level 3 - HW! Hacker Challange</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Monoton&display=swap">
+    <!-- add website icon -->
+    <link rel="icon" href="https://cdn.glitch.com/9f283387-d235-4e18-8461-e5d9e2d2c5da%2Ffavicon.png?v=1593503631622">
+
+  </head>
+  <body class="main">
+    <!-- Huvudrubrik -->
+    <h1 id="head">
+      Level 3
+    </h1>
+  
+    <!-- Beskrivning -->
+    <div class="plain-text">
+      <h2 class="center-text">
+        Grattis! Du klarade nivå 2!
+      </h2>
+      <p>
+        Hade egentligen tänkt att gratta dig med en fin bild, men det verkar som
+        att någon har varit inne på min sida och tagit bort den... Jag tror verkligan
+        att du hade uppskattat min bild.
+      </p>
+      <p>
+        Aja, vi får väl fortsätta utan min bild. Nu ska vi fortsätta kolla lite närmare
+        på fliken <em>elements</em>. När du är inne på den fliken, bör du samtidigt ha
+        tillgång till en annan meny som bland annat innehåller flikarna <em>styles</em>,
+        <em>event listeners</em> och <em>DOM breakpoints</em>. Går du in på <em>styles</em>
+        bör du se något i stil med detta:
+      </p>
+      <img class="small-image center" src="https://cdn.glitch.com/9f283387-d235-4e18-8461-e5d9e2d2c5da%2Fdevtools_styles.png?v=1593605722237" alt="bild på hur devtools ser ut">
+      <p>
+        Det kan vara så att det ser lita annourlunda ut för dig, men förhoppningsvis ser du
+        i alla fall samma typ av innehåll. Precis som i bilden, bör du åtminstone ha tre olika
+        rutor som innehåller olika saker. En som innehåller taggarna (rutan högst upp i bilden),
+        en som innehåller de olika färgade fyrkanterna (rutan nere till höger i bilden) och
+        den som i bilden är längst ner till vänste och som bland annat innehåller texten
+        <b>element.style</b> högst upp.
+      </p>
+      <p>
+        Den sistnämnda rutan innehåller information om hur sakerna på hemsidan är designade.
+        Klickar du på en specifik tagg i den översta rutan kommer innehållet i den här rutan
+        att uppdateras för att visa vilka design-inställningar det specifika objektet har.
+        Klickar du till exempel på taggen <b>&lt;h1 id="head"&gt;</b> (den som är markerad i bilden),
+        får du i rutan upp all styling för rubriken på den här hemsidan. Exempelvis ser du att färgen 
+        ("color" på engelska) på rubriken är #ffffff, vilket är en datorkod för färgen vit. Det roliga är nu att du 
+      </p>
+      <p class="center-text">
+        <b>
+          Kan du klura ut vad lösenordet till nivå 4 är?
+        </b>
+      </p>
+    </div>
+    
+    <div id="hint" >
+      <button onclick="showHint()" id="hint-button">VISA HINT</button>
+      <p class="dold plain-text">
+        <b>HINT:</b>
+        <i>Du behöver ändra i <b>styles</b> för att hitta bilden. (eller öppna bilden via dess länk, eller ta bort "dold"-klassen bilden.)</i>
+      </p>
+    </div>
+    
+    <!-- Fin bild -->
+    <img class="center dold" src="https://cdn.glitch.com/9f283387-d235-4e18-8461-e5d9e2d2c5da%2Fcode_4.png?v=1593510001529" alt="lösenordet finns här"/>
+
+    <!-- Rutan med input -->
+    <div id="form">
+      <input type="text" placeholder="Lösenord" id="code" required/>
+      <button onclick="evaluateForm()" id="form-button">KÖR</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
