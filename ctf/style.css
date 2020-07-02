@@ -1,0 +1,128 @@
+/* CSS files add styling rules to your content */
+
+
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+
+}
+
+.main {
+   background: linear-gradient(340deg, #212e5c, #131836, #06080f);
+   background-size: 1600% 1600%;
+   animation: AnimationName 10s ease infinite;
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 44%}
+    50%{background-position:100% 57%}
+    100%{background-position:0% 44%}
+}
+
+.blink {
+  background: linear-gradient(356deg, #e33636, #0bb721);
+  background-size: 1600% 1600%;
+  animation: Blink 2s ease infinite;
+}
+
+@keyframes Blink {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+
+h1 {
+  font-family: 'Monoton', cursive;
+  text-align: center;
+  color: #ffffff;
+  font-size: 5rem;
+  word-spacing: 30px;
+}
+
+.plain-text {
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: justify;
+  padding: 0px 15%;
+  margin-bottom: 10px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+#form {
+  width: 50%;
+  margin: 20px auto;
+  background-color: #1f8ded;
+  padding: 2%;
+  border-radius: 20px;
+}
+
+#form.wrong {
+  background-color: #e82045;
+}
+
+input {
+  width: 90%;
+  display: block;
+  margin: 3% auto;
+  padding: 2%;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2rem;
+}
+
+button {
+  padding: 5px 8px;
+  border-radius: 20px;
+  background: none;
+  border: 3px solid #ffffff;
+  font-size: 1.3rem;
+  display: block;
+  margin: 0 auto;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #6fb3ed;
+  border-color: #6fb3ed;
+}
+
+#form-button {
+  border-radius: 0px;
+  padding: 2% 8%;
+}
+
+#form-button:hover {
+  color: #212e5c;
+  border-color: #212e5c;
+}
+
+img {
+  width: 60%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.small-image {
+  width: 300px;
+}
+
+a {
+  color: #1f8ded;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dold {
+  display: none;
+}
+
+/*visibility: hidden;*/
