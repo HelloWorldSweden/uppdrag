@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Level 2 - HW! Hacker Challange</title>
+    <title>HW! CTF - Level 2</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,23 +25,17 @@
         Grattis! Du klarade nivå 1!
       </h2>
       <p>
-        Det betyder att du lyckades hitta in till det som kallas <em>console</em> i DevTools.
-        Det är ett ställe där hemsidan kan skriva ut meddelanden, eller där du som
-        använder hemsidan kan skriva saker till hemsidan.
-        <br><br>
-        Men nu är det dags att lära sig om något nytt. Välkommen till nivå 2! Här ska vi
-        kolla in lite nogrannare i fliken <em>elements</em>. Där bör du hitta massa läskig kod som
-        främst är på formen &lt;ord&gt;&lt;/ord&gt;. Det här är text i programmeringsspråket HTML och det om används
-        för att bygga upp en hemsida. De olika <em>taggarna</em> (det som &lt;ord&gt;&lt;/ord&gt; kallas för) markerar
-        olika objekt på sidan, så som text, knappar, bilder och textrutor. Håller du musen över en
-        tagg, bör din webbläsare markera vad på skärmen som taggen är kopplad till (vissa taggar är
-        dock inte kopplade till något synligt på skärmen och därför gäller detta bara vissa taggar).
-        Ibland kan taggar vara placerade innuti andra taggar och då kan du behöva klicka på små pilar
-        i DevTools för att se taggarna däri.
+        Tack! Att jag inte tänkte på att lösenordet inte behövde vara gömt här hemma, utan
+        kunde vara gömt digitalt. Nu kan jag äntligen börja spela <i>Pandou Hike</i>! :D
+      </p>
+      <p>
+        Eftersom du verkade vara så duktig på att hitta gömda saker, har jag valt att gömma
+        ett nytt lösenord för dig. Jag tog några lådor och placerade lösenordet låååångt
+        ner.
       </p>
       <p class="center-text">
         <b>
-          Kan du klura ut vad lösenordet till nivå 3 är?
+          Kan du hitta lösenordet till nivå 3?
         </b>
       </p>
     </div>
@@ -50,8 +44,10 @@
       <button onclick="showHint()" id="hint-button">VISA HINT</button>
       <p class="dold plain-text">
         <b>HINT:</b>
-        <i>Om du letar runt bland taggarna under fliken <b>elements</b>, kan du hitta något?
-          Du behöver troligtvis öppna upp ett antal taggar innan du finner något.</i>
+        <i>Om du letar runt bland taggarna under fliken <b>Elements</b>, kan du hitta något?
+          Du behöver troligtvis öppna upp ett antal taggar innan du finner något. Kanske kan det
+          hjälpa att läsa avsnittet <b>2. Fliken - Elements</b> och <b>2.1 Vanliga taggar</b> i
+          DevTools-guiden.</i>
       </p>
     </div>
     
@@ -59,7 +55,7 @@
     <div id="mystisk tagg">
       <div>
         <div>
-          <!-- Återvändsgränd -->
+          <!-- Återvändsgränd! Du får fortsätta leta vidare. -->
         </div>
         <div>
           <div>
@@ -71,10 +67,14 @@
           <div>
             <div>
               <div>
-                <!-- Nu måste vi väl ändå vara påväg någon stans? -->
                 <div>
+                  <!-- Nu måste vi väl ändå vara påväg någon stans? -->
                   <div>
-                    <!-- Lösenordet till nivå 3: äppelmos -->
+                    <div>
+                      <div>
+                        <!-- Lösenordet till nivå 3: äppelmos -->
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -87,7 +87,7 @@
     <!-- Rutan med input -->
     <div id="form">
       <input type="text" placeholder="Lösenord" id="code" required/>
-      <button onclick="evaluateForm()" id="form-button">KÖR</button>
+      <button onclick="evaluateForm()" id="form-button">TESTA</button>
     </div>
     <script src="script.js"></script>
   </body>

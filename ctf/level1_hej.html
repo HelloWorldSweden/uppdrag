@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Level 1 - HW! Hacker Challange</title>
+    <title>HW! CTF - Level 1</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,16 +22,20 @@
     <!-- Beskrivning -->
     <div class="plain-text">
       <p>
-        Välkommen till nivå 1! Här ska du få påbörja din resa att försöka lära dig
-        att <em>hacka</em> hemsidor. Till att börja med ska du få lära dig vad DevTools är.
-        Det är ett sätt att låsa upp en helt ny värld av hemsidor. Du får nämligen en möjlighet
-        att titta in till baksidan av en hemsida. Du kommer åt verktyget när du är inne på en
-        hemsida på datorn genom att klicka på knappen f12 eller högerklicka med musen och välja
-        "inspektera" i menyn. Testa!
+        Hej! Kul att du ville komma på besök! Du skulle inte möjligtvis vilja hjälpa mig med en sak?
+        När jag var i skolan skulle min syster hjälpa mig att skapa ett konto till spelet Pandou Hike
+        på datorn här hemma. När jag väl kom hem hade hon hunnit åka till sitt jobb, så hon hann aldrig
+        berätta för mig vad mitt lösenord var. Hon hade dock lämnat den här lappen.
+      </p>
+      <img class="center small-image" src="https://cdn.glitch.com/9f283387-d235-4e18-8461-e5d9e2d2c5da%2Fnote_level1.png?v=1593702826579" alt="'Jag har gömt ditt lösenord. Om du bara letar runt lite så bör du hitta det.'">
+      <p>
+        Jag förstår inte riktigt vad hon menar. Jag har redan varit runt och letat här hemma. Jag har
+        verkligen kollat överallt, men jag hittar inget... Jag har längtat hela dagen för att få börja
+        spela spelet, så jag vill inte vänta tills hon kommer hem igen.
       </p>
       <p class="center-text">
         <b>
-          Med hjälp av verktyget, kan du klura ut vad lösenordet till nivå 2 är?
+           Skulle du kunna hjälpa mig att leta efter lösenordet?
         </b>
       </p>
     </div>
@@ -40,15 +44,17 @@
       <button onclick="showHint()" id="hint-button">VISA HINT</button>
       <p class="dold plain-text">
         <b>HINT:</b>
-        <i>Om du letar runt bland flikarna i menyn, kan du hitta något? Du kommer inte behöva
-          skriva något, genom att bara läsa bör du hitta rätt.</i>
+        <i>Om du letar runt bland flikarna i menyn i DevTools, kan du hitta något?
+          Du bör hitta rätt genom att bara läsa det som står när du klickar runt bland flikarna.
+          Det kan hjälpa att läsa om avsnittet <b>1. Intro</b> i DevTools-guiden.
+        </i>
       </p>
     </div>
 
     <!-- Rutan med input -->
     <div id="form">
       <input type="text" placeholder="Lösenord" id="code" required/>
-      <button onclick="evaluateForm()" id="form-button">KÖR</button>
+      <button onclick="evaluateForm()" id="form-button">TESTA</button>
     </div>
     <script src="script.js"></script>
     <script src="script_level1.js"></script>
