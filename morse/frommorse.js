@@ -5,7 +5,7 @@ from.addEventListener('change', update2);
 function update2(e){
 	var morse = from.value;
   morse = oversatt(morse);
-  text2.innerHTML = morse.join('');
+  text2.innerHTML = morse.join(' ');
 }
 
 function morseconverter(morsecode){
