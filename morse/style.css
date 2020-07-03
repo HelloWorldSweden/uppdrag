@@ -1,6 +1,9 @@
+
 body {
   background-color: #46AFB8;
   margin: 0;
+  width: 100%;
+  height: 100%;
 }
 div.Hello_World{
   position: absolute;
@@ -19,8 +22,8 @@ img{
   padding-bottom: 2%;
   padding-left: 2%;
   border-radius: 20px;
-  left: 20%;
-  top: 200px;
+  left: 18%;
+  top: 250px;
 }
 #franmorse{
   width: 20%;
@@ -32,19 +35,21 @@ img{
   padding-left: 2%;
   border-radius: 20px;
   background-color: #057190;
-  left: 60%;
-  top: 200px;
+  left: 58%;
+  top: 250px;
 }
 #f{
+  font-family: helvetica, arial, sans-serif;
   width: 90%;
   display: block;
   margin: 3% auto;
   padding: 2%;
   border-radius: 10px;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 #t{
+  font-family: helvetica, arial, sans-serif;
   width: 90%;
   display: block;
   margin: 3% auto;
@@ -54,10 +59,19 @@ img{
   font-size: 1.5rem;
 }
 #from{
+  font-family: helvetica, arial, sans-serif;
   margin: 15% auto;
-  font-size: 20;
+  font-size: 1.5rem;
 }
 #till{
+  font-family: helvetica, arial, sans-serif;
   margin: 15% auto;
-  font-size: 20;
+  font-size: 2rem;
+}
+h1 {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  margin-top: 2rem;
+  text-align: center;
 }
