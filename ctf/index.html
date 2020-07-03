@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HW! Capture the Flag</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Monoton&display=swap">
+    <!-- add website icon -->
+    <link rel="icon" href="https://cdn.glitch.com/9f283387-d235-4e18-8461-e5d9e2d2c5da%2Ffavicon.png?v=1593503631622">
+
+  </head>
+  <body class="main">
+    <!-- Huvudrubrik -->
+    <h1 id="head">
+      Hacker challenge
+    </h1>
+  
+    <!-- Beskrivning -->
+    <div class="plain-text">
+      <h2 class="center-text">
+        Välkommen till Hello World!s capture the flag! 
+      </h2>
+      <p>
+        Capture the flag på internet är inte riktigt samma sak som den man kan kör på idrotten.
+        Målet är att utföra flera mindre uppdrag som alla går ut på att försöka knäcka ett
+        lösenord som behövs för att komma vidare till nästa nivå. Klarar du alla nivåer får du
+        badgen “[XXX]”.
+      </p>
+      <p>
+        För att börja utmaningen och komma till första nivån, fyll i lösenordet "start"
+        och klicka på <b><em>KÖR</em></b>.
+      </p>
+      <p>
+        Dessa uppdrag kan vara rätt kluriga, så det är inte konstigt att man fastnar ibland.
+        Fastnar du på en nivå kan du klicka på knappen <b><em>VISA HINT</em></b> för att få en hint,
+        eller så kan du försöka läsa igenom DevTools-guiden en gång till. Är du fortfarande fast kanske
+        du kan ta hjälp av en kompis.
+      </p>
+    </div>
+
+    <!-- Rutan med input -->
+    <div id="form">
+      <input type="text" placeholder="Lösenord" id="code" required/>
+      <button onclick="evaluateForm()" id="form-button">KÖR</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
