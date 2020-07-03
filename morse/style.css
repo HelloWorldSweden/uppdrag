@@ -11,6 +11,7 @@ img{
   width: 300px;
 }
 #tillmorse{
+  width: 20%;
   position: absolute;
   background-color: #057190;
   padding: 2%;
@@ -22,6 +23,7 @@ img{
   top: 200px;
 }
 #franmorse{
+  width: 20%;
   position: absolute;
   padding: 2%;
   padding-top: 2%;
