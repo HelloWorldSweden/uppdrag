@@ -39,6 +39,7 @@ function starta(){
   document.getElementById('button2').disabled = false;
   document.getElementById('button3').disabled = false;
   document.getElementById('button4').disabled = false;
+  start.style.visibily = 'hidden';
   liv = 3;
   poang = 0;
   clocktime = 10;
@@ -81,7 +82,7 @@ function updatepicture(){
   var num = Math.floor(Math.random()*listamedbilder.length);
   bild.src = listamedbilder[num];
   thebutton = Math.floor(Math.random()*4) + 1;
-  var buttonlist = [button1, button2, button3, button4];
+  buttonlist = [button1, button2, button3, button4];
   buttonen = buttonlist[thebutton - 1];
   buttonlist[thebutton - 1].innerHTML = listamednamn[num];
   buttonlist.splice(thebutton - 1, 1);
@@ -99,6 +100,8 @@ function gameover(){
   document.getElementById('button2').disabled = true;
   document.getElementById('button3').disabled = true;
   document.getElementById('button4').disabled = true;
+  start.innerHTML = "Starta om";
+  start.style.visibily = 'visible';
 }
 
 function incorrectanswer(button){
