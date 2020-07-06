@@ -30,3 +30,59 @@ body{
     translate: calc(var(--i)/2 - 10px);
     align-self: flex-end;
 }
+
+#scoreBox{
+    font-family: Nunito;
+    color: white;
+    font-size: 1.4rem;
+    margin: 35px 10px 0 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+#scoreBox p{
+    margin: 10px 0;
+}
+
+#scoreBox div{
+    margin-left: 25px;    
+}
+
+
+button{
+    background-color: rgb(22, 156, 156);
+    color: whitesmoke;
+    border: none;
+    width: 120px;
+    height: 60px;
+    font-size: 1.5rem;
+}
+
+.slider{
+    -webkit-appearance: none;
+    appearance: none;
+    background: lightcoral;
+    border-radius: 10px;
+    height: 10px;
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: lightblue;
+    border-color: lightblue;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+
+.slider::-moz-range-thumb{
+    cursor: pointer;
+    background-color: lightblue;
+    border-color: lightblue;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
