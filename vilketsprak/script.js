@@ -4,12 +4,18 @@ var button3 = document.querySelector("#button3");
 var button4 = document.querySelector("#button4");
 var start = document.querySelector("#startbutton");
 var clock = document.getElementById('clock');
+var bild = document.getElementById('bild');
+var buttonlist;
 var poangdisp = document.getElementById('poang');
 var livdisp = document.getElementById("liv");
 var clocktime;
 var thebutton;
 var liv;
 var poang;
+document.getElementById('button1').disabled = true;
+document.getElementById('button2').disabled = true;
+document.getElementById('button3').disabled = true;
+document.getElementById('button4').disabled = true;
 button1.addEventListener("click", function(){
   button1click()
 });
@@ -27,14 +33,15 @@ start.addEventListener("click", function(){
 });
 
 function starta(){
-  liv = 3;
-  poang = 0;
-  clocktime = 10;
-  update();
   document.getElementById('button1').disabled = false;
   document.getElementById('button2').disabled = false;
   document.getElementById('button3').disabled = false;
   document.getElementById('button4').disabled = false;
+  liv = 3;
+  poang = 0;
+  clocktime = 10;
+  clockfunc();
+  update();
 }
 
 function clockfunc(){
@@ -42,29 +49,40 @@ function clockfunc(){
     if(liv > 0){
       incorrectanswer();
     }
+    clockfunc();
   }else{
-    clock.innerHTML = clocktime;
+    clock.innerHTML = "Tid: " + clocktime;
     clocktime = clocktime - 1;
     setTimeout(clockfunc, 1000);
   }
 }
 
 function update(){
-    livdisp.innerHTML = liv;
-    poangdisp.innerHTML = poang;
+    livdisp.innerHTML = "Liv: " + liv;
+    poangdisp.innerHTML = "Poang: " + poang;
     if(liv < 1){
       gameover();
     }else{
       clocktime = 10;
-      clockfunc();
       updatepicture();
     }
 }
 
 function updatepicture(){
-  listamedbilder=[Whitespace.png];
-  listamednamn=[whitespace];
-  tal = 0;
+  var listamedbilder=["ArnoldC.png", "Html.png", "Java.png","LOLCODE.png", "Python.PNG", "Scratch.png", "Whitespace.png"];
+  var listamednamn=["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace"];
+  var num = Math.floor(Math.random()*listamedbilder.length);
+  bild.src = listamedbilder[num];
+  thebutton = Math.floor(Math.random()*4) + 1;
+  var buttonlist = [button1, button2, button3, button4];
+  buttonlist[thebutton - 1].innerHTML = listamednamn[num];
+  buttonlist.splice(thebutton - 1, 1);
+  listamednamn.splice(num, 1);
+  for (i = 0; i < 3; i++){
+    var rand = Math.floor(Math.random(listamednamn.length));
+    buttonlist[i].innerHTML = listamednamn[rand];
+    listamednamn.splice(rand,1);
+  }
 }
 
 function gameover(){
