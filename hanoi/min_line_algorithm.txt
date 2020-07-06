@@ -1,0 +1,14 @@
+// lösning ett
+while(!solved)
+ flytta den minsta till vänster("runt kanten om behövs")
+ gör de enda tillåtna flytten utan det minsta blocket
+
+
+
+// Recursivt:
+move(size, start, goal, off){
+     if(size = 0) return;
+     move(size-1, start, off, goal)
+     move_1(start, goal)
+     move(size-1, off, goal, start)
+ }

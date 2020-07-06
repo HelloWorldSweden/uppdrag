@@ -1,6 +1,8 @@
 var gameBox = document.querySelector("#hanoiGameBox");
-var towerElements = gameBox.querySelectorAll(".tower");
-var blockElements = gameBox.querySelectorAll(".block");
+var scoreBox = document.querySelector("#scoreBox");
+var resetButton = document.querySelector("#resetButton");
+var blockSlider = document.querySelector("#blockSlider");
+var towerSlider = document.querySelector("#towerSlider");
 
 var moves = 0;
 
@@ -8,42 +10,69 @@ var box = gameBox.getBoundingClientRect();
 var Yref = box.top;
 var Xref = box.left;
 
+var n_towers = 3;
+var n_blocks = 3;
+
+var towers = []
+var blocks = []
+
+function setup(){
+
+    for(i = 0; i < n_towers; i++){
+        let new_tower = document.createElement("div");
+        gameBox.insertBefore(new_tower, scoreBox);
+        new_tower.classList.add("tower");
+    }
+    var towerElements = gameBox.querySelectorAll(".tower");
+
+    for(i = 0; i < n_blocks; i++){
+        let new_block = document.createElement("div");
+        towerElements[0].appendChild(new_block);
+        new_block.classList.add("block");
+    }
+    var blockElements = gameBox.querySelectorAll(".block");
+
+
+    towerElements.forEach((element, index) => {
+        towers.push({
+            element: element,
+            blocks: [],
+            index: index
+        })
+    });
+
+    blockElements.forEach((element,index) => {
+    element.style.setProperty("--i", 40 + (index+1)*120/n_blocks+"px");
+    element.style.setProperty("height", Math.min(120/n_blocks, 30)+"px");
+    block = ({
+        element: element,
+        size: index,
+        locked: 0,
+        moved: 0,
+        tower: 0,
+        x: 0,
+        y: 0
+    });
+    blocks.push(block);
+    towers[0].blocks.push(block);
+    });
+
+    blocks.forEach(block => {
+        block.element.addEventListener("mousedown", (e) => lock(e, block));
+    });
+}
+
+function complete(){
+    return towers.every(tower => (tower.blocks.length == 0 || tower.index == n_towers - 1));
+}
+
+function updateScore(){
+    scoreBox.querySelector("#moves").innerHTML = `Moves: ${moves}`;
+}
+
 function relativeXY(event){
     return[event.clientX - Xref, event.clientY - Yref];
 }
-
-console.log(Yref + " " + Xref);
-
-
-towers = []
-towerElements.forEach((element, index) => {
-    towers.push({
-        element: element,
-        blocks: [],
-        index: index
-    })
-});
-
-blocks = []
-blockElements.forEach((element,index) => {
-   element.style.setProperty("--i", 40 + (index+1)*30+"px");
-   block = ({
-       element: element,
-       size: index,
-       locked: 0,
-       moved: 0,
-       tower: 0,
-       x: 0,
-       y: 0
-   });
-   blocks.push(block);
-   towers[0].blocks.push(block);
-});
-
-console.log(blocks);
-console.log(towers);
-
-
 
 function lock(event, block){
     if(legal_lift(block)){
@@ -58,11 +87,6 @@ function move(event){
     blocks.forEach(block => {
         if(block.locked){
             [x,y] = relativeXY(event);
-            // if(y > 100){
-            //     diffX = 0;
-            // }else{
-            //     diffX = x - block.x;
-            // }
             diffX = x - block.x;
             diffY = y - block.y;
             block.element.style.setProperty("transform", `translate(${diffX}px, ${diffY}px)`);
@@ -76,13 +100,11 @@ function release(event){
         if(block.locked){
             block.locked = false;
             [x,y] = relativeXY(event);
-            if(95 < x && x < 155){
-                switch_tower(block, block.tower, 0);
-            } else if (250 < x && x < 310){
-                switch_tower(block, block.tower, 1);
-            } else if (420 < x && x < 480){
-                switch_tower(block, block.tower, 2);
-            }
+            pos = x - 50;
+            
+            // x/155 or max index
+            tower_i = Math.min(n_towers-1, Math.floor(pos/160))
+            switch_tower(block, block.tower, tower_i);
             block.element.style.setProperty("transform", "");
         }
     });
@@ -106,16 +128,40 @@ function switch_tower(block, fromTowerIndex, toTowerIndex){
         towers[fromTowerIndex].element.removeChild(block.element);
         towers[toTowerIndex].element.insertBefore(block.element, towers[toTowerIndex].element.firstChild);
         towers[toTowerIndex].blocks.unshift(towers[fromTowerIndex].blocks.shift());
-        console.log("To: " + towers[toTowerIndex].blocks[0].size);
-        console.log(towers[fromTowerIndex].blocks[0]);
         block.tower = toTowerIndex;
         moves++;
+        updateScore();
+        if(complete()){
+            scoreBox.querySelector("#complete").innerHTML = "Grattis! Du klarade det!";
+        }
     }
 }
 
-blocks.forEach(block => {
-    block.element.addEventListener("mousedown", (e) => lock(e, block));
-});
+function reset(){
+    moves = 0;
+    towers.forEach(tower => {
+        gameBox.removeChild(tower.element);
+    });
+    blocks = [];
+    towers = [];
+    setup();
+    updateScore();
+    scoreBox.querySelector("#complete").innerHTML = "";
+}
 
+function changeBlockNumber(){
+    n_blocks = blockSlider.valueAsNumber;
+    reset();    
+}
+
+function changeTowerNumber(){
+    n_towers = towerSlider.valueAsNumber;
+    reset();    
+}
+
+setup();
 document.addEventListener("mousemove", move);
 document.addEventListener("mouseup", release);
+resetButton.addEventListener("click", reset);
+blockSlider.addEventListener("input", changeBlockNumber);
+towerSlider.addEventListener("change", changeTowerNumber);
