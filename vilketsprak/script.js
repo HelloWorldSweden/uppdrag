@@ -6,6 +6,7 @@ var start = document.querySelector("#startbutton");
 var clock = document.getElementById('clock');
 var bild = document.getElementById('bild');
 var buttonlist;
+var buttonen;
 var poangdisp = document.getElementById('poang');
 var livdisp = document.getElementById("liv");
 var clocktime;
@@ -49,8 +50,14 @@ function clockfunc(){
     if(liv > 0){
       incorrectanswer();
     }
+    if(liv<1){
+      return;
+    }
     clockfunc();
   }else{
+    if(liv == 0){
+      return;
+    }
     clock.innerHTML = "Tid: " + clocktime;
     clocktime = clocktime - 1;
     setTimeout(clockfunc, 1000);
@@ -59,7 +66,7 @@ function clockfunc(){
 
 function update(){
     livdisp.innerHTML = "Liv: " + liv;
-    poangdisp.innerHTML = "Poang: " + poang;
+    poangdisp.innerHTML = "Po&aumlng: " + poang;
     if(liv < 1){
       gameover();
     }else{
@@ -69,12 +76,13 @@ function update(){
 }
 
 function updatepicture(){
-  var listamedbilder=["ArnoldC.png", "Html.png", "Java.png","LOLCODE.png", "Python.Png", "Scratch.png", "Whitespace.png", "Haskell.png"];
+  var listamedbilder=["ArnoldC.png", "Html.png", "Java.png","LOLCODE.png", "Python.png", "Scratch.png", "Whitespace.png", "Haskell.png"];
   var listamednamn=["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace", "Haskell"];
   var num = Math.floor(Math.random()*listamedbilder.length);
   bild.src = listamedbilder[num];
   thebutton = Math.floor(Math.random()*4) + 1;
   var buttonlist = [button1, button2, button3, button4];
+  buttonen = buttonlist[thebutton - 1];
   buttonlist[thebutton - 1].innerHTML = listamednamn[num];
   buttonlist.splice(thebutton - 1, 1);
   listamednamn.splice(num, 1);
@@ -93,41 +101,52 @@ function gameover(){
   document.getElementById('button4').disabled = true;
 }
 
-function incorrectanswer(){
+function incorrectanswer(button){
+  lightgreen(buttonen);
+  lightred(button);
   liv = liv - 1;
   update();
 }
 
-function correctanswer(){
+function correctanswer(button){
+  lightgreen(button);
   poang = poang + 1;
   update();
 }
 
 function button1click(){
   if (thebutton == 1){
-    correctanswer();
+    correctanswer(button1);
   }else{
-    incorrectanswer();
+    incorrectanswer(button1);
   }
 }
 function button2click(){
   if (thebutton == 2){
-    correctanswer();
+    correctanswer(button2);
   }else{
-    incorrectanswer();
+    incorrectanswer(button2);
   }
 }
 function button3click(){
   if (thebutton == 3){
-    correctanswer();
+    correctanswer(button3);
   }else{
-    incorrectanswer();
+    incorrectanswer(button3);
+
   }
 }
 function button4click(){
   if (thebutton == 4){
-    correctanswer();
+    correctanswer(button4);
   }else{
-    incorrectanswer();
+    incorrectanswer(button4);
   }
+}
+function lightred(button){
+  button.style.backgroundColor = 	"#FF0000";
+}
+function lightgreen(button){
+  button.style.backgroundColor = "#00FF00";
+
 }
