@@ -1,0 +1,32 @@
+
+body{
+    margin: 0;
+    background-color: lightblue;
+}
+
+#hanoiGameBox{
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    background-color: cadetblue;
+}
+
+.tower{
+    display: flex;
+    width: 20px;
+    height: 150px;
+    margin:50px 70px 0 70px;
+    background-color: burlywood;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+.block{
+    background-color: lightcoral;
+    --i: 100px;
+    width: var(--i);
+    height: 30px;
+    translate: calc(var(--i)/2 - 10px);
+    align-self: flex-end;
+}
