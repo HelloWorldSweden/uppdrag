@@ -42,7 +42,8 @@ function setup(){
     });
 
     blockElements.forEach((element,index) => {
-    element.style.setProperty("--i", 40 + (index+1)*30+"px");
+    element.style.setProperty("--i", 40 + (index+1)*120/n_blocks+"px");
+    element.style.setProperty("height", Math.min(120/n_blocks, 30)+"px");
     block = ({
         element: element,
         size: index,
