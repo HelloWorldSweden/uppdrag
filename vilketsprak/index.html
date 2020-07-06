@@ -5,23 +5,30 @@
     <link rel="icon" href="https://helloworld.se/wp-content/uploads/2018/03/HW_favicon_glob_transparent.png">
   </head>
   <body>
-    <div id = "container">
-      <div id = "selectbuttons">
-        <button id="button1" class="answer-button"></button>
-        <button id="button2" class="answer-button"></button>
-        <button id="button3" class="answer-button"></button>
-        <button id="button4" class="answer-button"></button>
+    <div id="container">
+      <div id="sidebar">
+        <p class="score">
+          <b>Tid:</b> <span id="clock">10</span>
+        </p>
+        <p class="score">
+          <b>Po&auml;ng:</b> <span id="poang">0</span>
+        </p>
+        <p class="score">
+          <b>Liv:</b> <span id="liv">3</span>
+        </p>
+        <button type = "button" id = "startbutton">START</button>
       </div>
-      <div id = "displayimage">
-        <img id = "bild">
-      </div>
-      <div id = "start">
-        <button type = "button" id = "startbutton">Start</button>
-        <p id = "clock">Tid: 10</p>
-      </div>
-      <div id = "score">
-        <p id = "poang">Po&aumlng: 0</p>
-        <p id = "liv">Liv: 3</p>
+      <div id="main">
+        <h1> Vilket språk är det här?</h1>
+        <div id="displayimage">
+          <img id="bild">
+        </div>
+        <div id = "selectbuttons">
+          <button id="button1" class="answer-button"></button>
+          <button id="button2" class="answer-button"></button>
+          <button id="button3" class="answer-button"></button>
+          <button id="button4" class="answer-button"></button>
+        </div>
       </div>
     </div>
   </body>
