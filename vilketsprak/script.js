@@ -58,15 +58,15 @@ function clockfunc(){
     if(liv == 0){
       return;
     }
-    clock.innerHTML = "Tid: " + clocktime;
+    clock.innerHTML = clocktime;
     clocktime = clocktime - 1;
     timer = setTimeout(clockfunc, 1000);
   }
 }
 
 function update(){
-    livdisp.innerHTML = "Liv: " + liv;
-    poangdisp.innerHTML = "Po&auml;ng: " + poang;
+    livdisp.innerHTML = liv;
+    poangdisp.innerHTML = poang;
     if(liv < 1){
       gameover();
     }else{
