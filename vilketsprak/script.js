@@ -39,7 +39,8 @@ function starta(){
   document.getElementById('button2').disabled = false;
   document.getElementById('button3').disabled = false;
   document.getElementById('button4').disabled = false;
-  start.style.visibily = 'hidden';
+  document.getElementById('h1').innerHTML = " Vilket spr&aringk &aumlr det h&aumlr?";
+  start.style.visibility = 'hidden';
   liv = 3;
   poang = 0;
   clocktime = 10;
@@ -55,16 +56,25 @@ function clockfunc(){
       return;
     }
   }else{
+    if (clocktime < 4){
+      clock2.style.color = "#FF0000";
+    }else{
+      clock2.style.color = "#FFFFFF";
+    }
     if(liv == 0){
       return;
     }
-    clock.innerHTML = clocktime;
+    clock2.innerHTML = clocktime;
     clocktime = clocktime - 1;
     timer = setTimeout(clockfunc, 1000);
   }
 }
 
 function update(){
+    document.getElementById('button1').disabled = false;
+    document.getElementById('button2').disabled = false;
+    document.getElementById('button3').disabled = false;
+    document.getElementById('button4').disabled = false;
     livdisp.innerHTML = liv;
     poangdisp.innerHTML = poang;
     if(liv < 1){
@@ -100,8 +110,14 @@ function gameover(){
   document.getElementById('button2').disabled = true;
   document.getElementById('button3').disabled = true;
   document.getElementById('button4').disabled = true;
+  document.getElementById('button1').innerHTML = "";
+  document.getElementById('button2').innerHTML = "";
+  document.getElementById('button3').innerHTML = "";
+  document.getElementById('button4').innerHTML = "";
+  document.getElementById('h1').innerHTML = "";
+  bild.src = "Game_Over.png"
   start.innerHTML = "Starta om";
-  start.style.visibily = 'visible';
+  start.style.visibility= 'visible';
 }
 
 function incorrectanswer(button){
@@ -109,7 +125,10 @@ function incorrectanswer(button){
   lightgreen(buttonen);
   lightred(button);
   liv = liv - 1;
-
+  document.getElementById('button1').disabled = true;
+  document.getElementById('button2').disabled = true;
+  document.getElementById('button3').disabled = true;
+  document.getElementById('button4').disabled = true;
   setTimeout(() => update(), 1000);
 }
 
@@ -117,7 +136,10 @@ function timeOut() {
   clearTimeout(timer);
   lightgreen(buttonen);
   liv = liv - 1;
-
+  document.getElementById('button1').disabled = true;
+  document.getElementById('button2').disabled = true;
+  document.getElementById('button3').disabled = true;
+  document.getElementById('button4').disabled = true;
   setTimeout(() => update(), 1000);
 }
 
