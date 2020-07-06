@@ -69,8 +69,8 @@ function update(){
 }
 
 function updatepicture(){
-  var listamedbilder=["ArnoldC.png", "Html.png", "Java.png","LOLCODE.png", "Python.PNG", "Scratch.png", "Whitespace.png"];
-  var listamednamn=["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace"];
+  var listamedbilder=["ArnoldC.png", "Html.png", "Java.png","LOLCODE.png", "Python.Png", "Scratch.png", "Whitespace.png", "Haskell.png"];
+  var listamednamn=["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace", "Haskell"];
   var num = Math.floor(Math.random()*listamedbilder.length);
   bild.src = listamedbilder[num];
   thebutton = Math.floor(Math.random()*4) + 1;
