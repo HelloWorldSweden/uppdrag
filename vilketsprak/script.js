@@ -6,11 +6,12 @@ var start = document.querySelector("#startbutton");
 var clock = document.getElementById('clock');
 var bild = document.getElementById('bild');
 var buttonlist;
-var buttonen;
+var buttonen; // the correct button
 var poangdisp = document.getElementById('poang');
 var livdisp = document.getElementById("liv");
 var clocktime;
-var thebutton;
+var timer;
+var thebutton; // index of correct answer
 var liv;
 var poang;
 document.getElementById('button1').disabled = true;
@@ -41,36 +42,35 @@ function starta(){
   liv = 3;
   poang = 0;
   clocktime = 10;
-  clockfunc();
   update();
 }
 
 function clockfunc(){
   if (clocktime < 0){
     if(liv > 0){
-      incorrectanswer();
+      timeOut();
     }
     if(liv<1){
       return;
     }
-    clockfunc();
   }else{
     if(liv == 0){
       return;
     }
     clock.innerHTML = "Tid: " + clocktime;
     clocktime = clocktime - 1;
-    setTimeout(clockfunc, 1000);
+    timer = setTimeout(clockfunc, 1000);
   }
 }
 
 function update(){
     livdisp.innerHTML = "Liv: " + liv;
-    poangdisp.innerHTML = "Po&aumlng: " + poang;
+    poangdisp.innerHTML = "Po&auml;ng: " + poang;
     if(liv < 1){
       gameover();
     }else{
       clocktime = 10;
+      clockfunc();
       updatepicture();
     }
 }
@@ -102,16 +102,28 @@ function gameover(){
 }
 
 function incorrectanswer(button){
+  clearTimeout(timer);
   lightgreen(buttonen);
   lightred(button);
   liv = liv - 1;
-  update();
+
+  setTimeout(() => update(), 1000);
+}
+
+function timeOut() {
+  clearTimeout(timer);
+  lightgreen(buttonen);
+  liv = liv - 1;
+
+  setTimeout(() => update(), 1000);
 }
 
 function correctanswer(button){
+  clearTimeout(timer);
   lightgreen(button);
   poang = poang + 1;
-  update();
+
+  setTimeout(() => update(), 1000);
 }
 
 function button1click(){
@@ -143,10 +155,15 @@ function button4click(){
     incorrectanswer(button4);
   }
 }
-function lightred(button){
-  button.style.backgroundColor = 	"#FF0000";
-}
-function lightgreen(button){
-  button.style.backgroundColor = "#00FF00";
 
+// Make the background color of `button` red for 1000ms
+function lightred(button){
+  button.classList.add("wrong");
+  setTimeout(() => button.classList.remove("wrong"), 1000);
+}
+
+// Make the background color of `button` green for 1000ms
+function lightgreen(button){
+  button.classList.add("correct");
+  setTimeout(() => button.classList.remove("correct"), 1000);
 }

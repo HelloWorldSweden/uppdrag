@@ -1,7 +1,8 @@
 body {
   font-family: helvetica, arial, sans-serif;
 }
-#button1 {
+
+.answer-button {
   background-color: #057190;
   padding: 2%;
   padding-top: 1%;
@@ -9,30 +10,15 @@ body {
   padding-left: 2%;
   border-radius: 20px;
 }
-#button2 {
-  background-color: #057190;
-  padding: 2%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  padding-left: 2%;
-  border-radius: 20px;
+
+.correct {
+  background-color: #00FF00;
 }
-#button3 {
-  background-color: #057190;
-  padding: 2%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  padding-left: 2%;
-  border-radius: 20px;
+
+.wrong {
+  background-color: #FF0000;
 }
-#button4 {
-  background-color: #057190;
-  padding: 2%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  padding-left: 2%;
-  border-radius: 20px;
-}
+
 #startbutton {
   background-color: #057190;
 }
