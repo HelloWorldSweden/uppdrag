@@ -5,14 +5,15 @@ var button4 = document.querySelector("#button4");
 var start = document.querySelector("#startbutton");
 var clock = document.getElementById('clock');
 var bild = document.getElementById('bild');
+var listamedbilder;
+var listamedalla;
+var listamednamn;
 var buttonlist;
 var buttonen; // the correct button
 var poangdisp = document.getElementById('poang');
-var livdisp = document.getElementById("liv");
 var clocktime;
 var timer;
 var thebutton; // index of correct answer
-var liv;
 var poang;
 document.getElementById('button1').disabled = true;
 document.getElementById('button2').disabled = true;
@@ -35,13 +36,14 @@ start.addEventListener("click", function(){
 });
 
 function starta(){
+  listamedbilder=["ArnoldC.png", "Html.png", "Java.png","LOLCODE.png", "Python.png", "Scratch.png", "Whitespace.png", "Haskell.png","Malbogle(the_8th_circle_of_hell).png", "Power_shell.png","Unity.png","Cobol.png"];
+  listamednamn=["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace", "Haskell", "Malbogle aka helvetets &aringttonde krets", "Power shell", "unity", "COBOL"];
   document.getElementById('button1').disabled = false;
   document.getElementById('button2').disabled = false;
   document.getElementById('button3').disabled = false;
   document.getElementById('button4').disabled = false;
   document.getElementById('h1').innerHTML = " Vilket spr&aringk &aumlr det h&aumlr?";
   start.style.visibility = 'hidden';
-  liv = 3;
   poang = 0;
   clocktime = 10;
   update();
@@ -49,10 +51,10 @@ function starta(){
 
 function clockfunc(){
   if (clocktime < 0){
-    if(liv > 0){
+    if(listamedbilder.length){
       timeOut();
     }
-    if(liv<1){
+    if(listamedbilder.length == 0){
       return;
     }
   }else{
@@ -61,7 +63,7 @@ function clockfunc(){
     }else{
       clock2.style.color = "#FFFFFF";
     }
-    if(liv == 0){
+    if(listamedbilder.length== 0){
       return;
     }
     clock2.innerHTML = clocktime;
@@ -75,9 +77,8 @@ function update(){
     document.getElementById('button2').disabled = false;
     document.getElementById('button3').disabled = false;
     document.getElementById('button4').disabled = false;
-    livdisp.innerHTML = liv;
     poangdisp.innerHTML = poang;
-    if(liv < 1){
+    if(listamedbilder.length == 0){
       gameover();
     }else{
       clocktime = 10;
@@ -87,20 +88,26 @@ function update(){
 }
 
 function updatepicture(){
-  var listamedbilder=["ArnoldC.png", "Html.png", "Java.png","LOLCODE.png", "Python.png", "Scratch.png", "Whitespace.png", "Haskell.png","Malbogle(the_8th_circle_of_hell).png", "Power_shell.png","Unity.png","Cobol.png"];
-  var listamednamn=["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace", "Haskell", "Malbogle aka helvetets åttonde krets", "Power shell", "unity", "COBOL"];
-  var num = Math.floor(Math.random()*listamedbilder.length);
-  bild.src = listamedbilder[num];
+  buttonlist = [button1, button2, button3, button4]; //väljer knapp och sparar plats och knapp
   thebutton = Math.floor(Math.random()*4) + 1;
-  buttonlist = [button1, button2, button3, button4];
   buttonen = buttonlist[thebutton - 1];
+
+  var num = Math.floor(Math.random()*listamedbilder.length); //väljer bild och lägger in
+  bild.src = listamedbilder[num];
   buttonlist[thebutton - 1].innerHTML = listamednamn[num];
-  buttonlist.splice(thebutton - 1, 1);
-  listamednamn.splice(num, 1);
+
+  var tabortnamn = listamednamn[num]; // det namn som ska tas bort från listan med namn för resten av knapparna
+
+  listamednamn.splice(num, 1); //tar bort den bild som används
+  listamedbilder.splice(num, 1);
+
+  listamedalla = ["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace", "Haskell", "Malbogle aka helvetets &aringttonde krets", "Power shell", "unity", "COBOL"];
+  buttonlist.splice(thebutton - 1, 1); // tar bort knappen som är rätt
+  listamedalla.splice(listamedalla.indexOf(tabortnamn), 1);
   for (i = 0; i < 3; i++){
-    var rand = Math.floor(Math.random(listamednamn.length));
-    buttonlist[i].innerHTML = listamednamn[rand];
-    listamednamn.splice(rand,1);
+    var rand = Math.floor(Math.random(listamedalla.length));
+    buttonlist[i].innerHTML = listamedalla[rand];
+    listamedalla.splice(rand,1);
   }
 }
 
@@ -124,7 +131,6 @@ function incorrectanswer(button){
   clearTimeout(timer);
   lightgreen(buttonen);
   lightred(button);
-  liv = liv - 1;
   document.getElementById('button1').disabled = true;
   document.getElementById('button2').disabled = true;
   document.getElementById('button3').disabled = true;
@@ -135,7 +141,6 @@ function incorrectanswer(button){
 function timeOut() {
   clearTimeout(timer);
   lightgreen(buttonen);
-  liv = liv - 1;
   document.getElementById('button1').disabled = true;
   document.getElementById('button2').disabled = true;
   document.getElementById('button3').disabled = true;
