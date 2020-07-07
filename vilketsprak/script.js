@@ -15,6 +15,10 @@ var clocktime;
 var timer;
 var thebutton; // index of correct answer
 var poang;
+button1.style.visibility = 'hidden';
+button2.style.visibility = 'hidden';
+button3.style.visibility = 'hidden';
+button4.style.visibility = 'hidden';
 document.getElementById('button1').disabled = true;
 document.getElementById('button2').disabled = true;
 document.getElementById('button3').disabled = true;
@@ -36,6 +40,10 @@ start.addEventListener("click", function(){
 });
 
 function starta(){
+  button1.style.visibility = 'visible';
+  button2.style.visibility = 'visible';
+  button3.style.visibility = 'visible';
+  button4.style.visibility = 'visible';
   listamedbilder=["ArnoldC.png", "Html.png", "Java.png","LOLCODE.png", "Python.png", "Scratch.png", "Whitespace.png", "Haskell.png","Malbogle(the_8th_circle_of_hell).png", "Power_shell.png","Unity.png","Cobol.png"];
   listamednamn=["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace", "Haskell", "Malbogle aka helvetets &aringttonde krets", "Power shell", "unity", "COBOL"];
   document.getElementById('button1').disabled = false;
@@ -112,6 +120,10 @@ function updatepicture(){
 }
 
 function gameover(){
+  button1.style.visibility = 'hidden';
+  button2.style.visibility = 'hidden';
+  button3.style.visibility = 'hidden';
+  button4.style.visibility = 'hidden';
   clocktime = 10;
   document.getElementById('button1').disabled = true;
   document.getElementById('button2').disabled = true;
