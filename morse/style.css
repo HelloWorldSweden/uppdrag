@@ -22,8 +22,8 @@ img{
   padding-bottom: 2%;
   padding-left: 2%;
   border-radius: 20px;
-  left: 18%;
-  top: 250px;
+  left: 5%;
+  top: 330px;
 }
 #franmorse{
   width: 20%;
@@ -35,8 +35,8 @@ img{
   padding-left: 2%;
   border-radius: 20px;
   background-color: #057190;
-  left: 58%;
-  top: 250px;
+  left: 5%;
+  top: 80px;
 }
 #f{
   font-family: helvetica, arial, sans-serif;
@@ -72,6 +72,17 @@ h1 {
   font-family: helvetica, arial, sans-serif;
   font-size: 3rem;
   color: #fff;
+  top: 10px;
   margin-top: 2rem;
-  text-align: center;
+  position: absolute;
+  left: 42%;
+}
+div.morse{
+  position: absolute;
+  left: 40%;
+  top: 190px;
+}
+#morsebild{
+  width: 80%;
+  height: 80%;
 }
