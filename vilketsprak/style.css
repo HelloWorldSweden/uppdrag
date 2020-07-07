@@ -79,13 +79,22 @@ button:hover {
 #displayimage {
   background-color: #FFF;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
 }
 
-#bild {
+#bild1 {
   display: block;
   margin: auto;
-  height: 100%;
-  width: 100%;
-  object-fit: contain
+  height: 90%;
+  width: 90%;
+  object-fit: contain;
+  font-size: 20px;
+}
+#bild2 {
+  display: none;
+  margin: auto;
+  height: 90%;
+  width: 90%;
+  object-fit: contain;
+  font-size: 20px;
 }
