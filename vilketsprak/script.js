@@ -144,9 +144,9 @@ function gameover(){
   document.getElementById('button3').innerHTML = "";
   document.getElementById('button4').innerHTML = "";
   document.getElementById('h1').innerHTML = "";
-  bild2.innerHTML = "Du fick: " + poang + "po&auml;!" + "<br>" + "f&aring;r badge beh&ouml;ver du 10 po&auml;ng";
-  bild1.display = 'none';
-  bild2.display = 'block';
+  bild1.innerHTML = "Du fick: " + poang + " po&auml;ng!" + "<br>" + "f&ouml;r badge beh&ouml;ver du 10 po&auml;ng" + "<br>" + "KTHX BYE";
+  bild2.display = 'none';
+  bild1.display = 'block';
   start.innerHTML = "Starta om";
   start.style.visibility= 'visible';
   if(poang > 9){
