@@ -90,7 +90,7 @@ function update(){
       gameover();
     }else{
       clocktime = 10;
-
+      clockfunc();
       updatepicture();
     }
 }
@@ -139,7 +139,9 @@ function gameover(){
   start.style.visibility= 'visible';
   if(poang > 9){
     alert("badge: hejsanworld");
+  }
 }
+
 function incorrectanswer(button){
   clearTimeout(timer);
   lightgreen(buttonen);
