@@ -4,7 +4,8 @@ var button3 = document.querySelector("#button3");
 var button4 = document.querySelector("#button4");
 var start = document.querySelector("#startbutton");
 var clock = document.getElementById('clock');
-var bild = document.getElementById('bild');
+var bild1 = document.getElementById('bild1');
+var bild2 = document.getElementById('bild2');
 var listamedbilder;
 var listamedalla;
 var listamednamn;
@@ -15,10 +16,10 @@ var clocktime;
 var timer;
 var thebutton; // index of correct answer
 var poang;
-button1.style.visibility = 'hidden';
-button2.style.visibility = 'hidden';
-button3.style.visibility = 'hidden';
-button4.style.visibility = 'hidden';
+button1.style.display = 'none';
+button2.style.display = 'none';
+button3.style.display = 'none';
+button4.style.display = 'none';
 document.getElementById('button1').disabled = true;
 document.getElementById('button2').disabled = true;
 document.getElementById('button3').disabled = true;
@@ -40,18 +41,17 @@ start.addEventListener("click", function(){
 });
 
 function starta(){
-  button1.style.visibility = 'visible';
-  button2.style.visibility = 'visible';
-  button3.style.visibility = 'visible';
-  button4.style.visibility = 'visible';
-  listamedbilder=["ArnoldC.png", "Html.png", "Java.png","LOLCODE.png", "Python.png", "Scratch.png", "Whitespace.png", "Haskell.png","Malbogle(the_8th_circle_of_hell).png", "Power_shell.png","Unity.png","Cobol.png"];
-  listamednamn=["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace", "Haskell", "Malbogle aka helvetets &aringttonde krets", "Power shell", "unity", "COBOL"];
+  button1.style.display = 'inline';
+  button2.style.display = 'inline';
+  button3.style.display = 'inline';
+  button4.style.display = 'inline';
+  createlistamedbilder();
   document.getElementById('button1').disabled = false;
   document.getElementById('button2').disabled = false;
   document.getElementById('button3').disabled = false;
   document.getElementById('button4').disabled = false;
   document.getElementById('h1').innerHTML = " Vilket spr&aringk &aumlr det h&aumlr?";
-  start.style.visibility = 'hidden';
+  start.style.display = 'none';
   poang = 0;
   clocktime = 10;
   update();
@@ -101,7 +101,17 @@ function updatepicture(){
   buttonen = buttonlist[thebutton - 1];
 
   var num = Math.floor(Math.random()*listamedbilder.length); //väljer bild och lägger in
-  bild.src = listamedbilder[num];
+  if(listamedbilder[num] == "Scratch.png"||listamedbilder[num] == "Whitespace.png"){
+    bild1.style.display = 'none';
+    bild2.style.display = 'block';
+    bild2.src = listamedbilder[num];
+  }else{
+    bild2.style.display = 'none';
+    bild1.style.display = 'block';
+    bild1.innerHTML = listamedbilder[num];
+  }
+
+
   buttonlist[thebutton - 1].innerHTML = listamednamn[num];
 
   var tabortnamn = listamednamn[num]; // det namn som ska tas bort från listan med namn för resten av knapparna
@@ -120,10 +130,10 @@ function updatepicture(){
 }
 
 function gameover(){
-  button1.style.visibility = 'hidden';
-  button2.style.visibility = 'hidden';
-  button3.style.visibility = 'hidden';
-  button4.style.visibility = 'hidden';
+  button1.style.display = 'none';
+  button2.style.display = 'none';
+  button3.style.display = 'none';
+  button4.style.display = 'none';
   clocktime = 10;
   document.getElementById('button1').disabled = true;
   document.getElementById('button2').disabled = true;
@@ -134,7 +144,9 @@ function gameover(){
   document.getElementById('button3').innerHTML = "";
   document.getElementById('button4').innerHTML = "";
   document.getElementById('h1').innerHTML = "";
-  bild.src = "Game_Over.png"
+  bild2.innerHTML = "Du fick: " + poang + "po&auml;!" + "<br>" + "f&aring;r badge beh&ouml;ver du 10 po&auml;ng";
+  bild1.display = 'none';
+  bild2.display = 'block';
   start.innerHTML = "Starta om";
   start.style.visibility= 'visible';
   if(poang > 9){
@@ -211,4 +223,20 @@ function lightred(button){
 function lightgreen(button){
   button.classList.add("correct");
   setTimeout(() => button.classList.remove("correct"), 1000);
+}
+function createlistamedbilder(){
+  listamedbilder = [];
+  listamedbilder.push("IT'S SHOWTIME <br> TALK TO THE HAND \"hello world\" <br> YOU HAVE BEEN TERMINATED");
+  listamedbilder.push("<pre> &lt;!DOCTYPE html&gt; <br> &lt;html&gt; <br> &#9; &lt;head&gt;  <br> &#9; &#9; &lt;title&gt;Hello World&lt;/title&gt;   <br> &#9; &lt;/head&gt;  <br> &#9; &lt;body&gt;  <br> &#9; &#9; &lt;p&gt;Hello World&lt;/p&gt;   <br> &#9; &lt;/body&gt;  <br> &lt;/html&gt; </pre>");
+  listamedbilder.push("<pre> public class HelloWorld { <br> &#9; public static void main(String args[]) { <br> &#9; &#9; System.out.print(\"Hello World\"); <br> &#9; } <br> } </pre>");
+  listamedbilder.push("<pre> HAI 1.2 <br> &#9; CAN HAS STDIO? <br> &#9; VISIBLE \"HAI WORLD!!!1!\" <br> KTHXBYE </pre>");
+  listamedbilder.push("print(\"Hello World\")");
+  listamedbilder.push("Scratch.png");
+  listamedbilder.push("Whitespace.png");
+  listamedbilder.push("main = putStrLn \"Hello, World!\"");
+  listamedbilder.push("('&%:9]!~}|z2Vxwv-,POqponl$Hjig%eB@@&gt;}=&lt;M:9wv6WsU2T|nm-,jcL(I&%$#\" <br> `CB]V?Tx&lt;uVtT`Rpo3NlF.Jh++FdbCBA@?]! <br> ~|4XzyTT43Qsqq(Lnmkj\"Fhg${z@&gt;");
+  listamedbilder.push("Write-Host \'Hello World!\'");
+  listamedbilder.push("Debug.Log(\"Hello World\");");
+  listamedbilder.push(" <pre> IDENTIFICATION DIVISION. <br> PROGRAM-ID. HELLO-WORLD. <br> * simple hello world program <br> PROCEDURE DIVISION. <br> &#9; DISPLAY 'Hello world!'. <br> &#9; STOP RUN. </pre>");
+  listamednamn=["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace", "Haskell", "Malbogle (helvetets &aringttonde krets)", "Power shell", "unity", "COBOL"];
 }
