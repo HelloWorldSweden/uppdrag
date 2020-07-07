@@ -31,7 +31,7 @@ function starta(){
 
   createlistamedbilder();
   document.getElementById('h1').innerHTML = "Vilket spr&aring;k &auml;r det h&auml;r?";
-  start.classList.remove("hidden");
+  start.classList.add("hidden");
   poang = 0;
   clocktime = 10;
   update();
@@ -123,7 +123,7 @@ function gameover(){
   bild1.innerHTML = `Du fick: ${poang} po&auml;ng!<br><br>${meddelande}<br><br>KTHX BYE`;
   bild2.classList.add("hidden");
   bild1.classList.remove("hidden");
-  start.innerHTML = "Starta om";
+  start.innerHTML = "STARTA OM";
   start.classList.remove("hidden");
 }
 

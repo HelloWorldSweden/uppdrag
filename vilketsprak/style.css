@@ -21,18 +21,10 @@ button {
 button:hover {
   color: #46afb8;
 }
-#clock1{
-  font-size: 50px;
-}
-
-#clock2{
-  font-size: 50px;
-}
 
 #sidebar {
   padding: 10px;
   width: 20%;
-  font-size: 50px;
 }
 
 #container {
@@ -61,15 +53,16 @@ button:hover {
 .score {
   margin-left: 5px;
   color: #FFF;
+  font-size: 3em;
 }
 
 #startbutton {
-    font-size: 1.3em;
+    font-size: 2.5em;
     border-radius: 5px;
 }
 
 #main {
-  --w: max(50%, 300px);
+  --w: max(50%, 570px);
   width: var(--w);
   height: 100%;
   position: absolute;
@@ -85,8 +78,7 @@ button:hover {
 #bild1 {
   display: block;
   margin: auto;
-  height: 90%;
-  width: 90%;
+  padding: 0px 8px;
   object-fit: contain;
   font-size: 20px;
 }
