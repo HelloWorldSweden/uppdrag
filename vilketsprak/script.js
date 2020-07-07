@@ -147,6 +147,7 @@ function timeOut() {
 function correctanswer(button){
   clearTimeout(timer);
   lightgreen(button);
+  buttonlist.forEach(button => button.disabled = true);
   poang = poang + 1;
 
   setTimeout(() => update(), 1000);
