@@ -91,10 +91,18 @@ button:hover {
   font-size: 20px;
 }
 #bild2 {
-  display: none;
+  display: block;
   margin: auto;
   height: 90%;
   width: 90%;
   object-fit: contain;
   font-size: 20px;
+}
+
+#bild1.hidden, #bild2.hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
 }

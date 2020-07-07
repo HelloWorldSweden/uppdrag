@@ -14,7 +14,7 @@ var poang;
 // button setup
 const buttonlist = [1,2,3,4].map(i => document.querySelector(`#button${i}`));
 buttonlist.forEach((button, i) => {
-  button.style.display = 'none';
+  button.classList.add("hidden");
   button.disabled = true;
   button.addEventListener("click", () => buttonClick(i));
 });
@@ -25,13 +25,13 @@ start.addEventListener("click", function(){
 
 function starta(){
   buttonlist.forEach(button => {
-    button.style.display = 'inline';
+    button.classList.remove("hidden");
     button.disabled = false;
   });
 
   createlistamedbilder();
   document.getElementById('h1').innerHTML = "Vilket spr&aring;k &auml;r det h&auml;r?";
-  start.style.display = 'none';
+  start.classList.remove("hidden");
   poang = 0;
   clocktime = 10;
   update();
@@ -77,12 +77,12 @@ function updatepicture(){
 
   var num = Math.floor(Math.random()*listamedbilder.length); //väljer bild och lägger in
   if(listamedbilder[num] == "Scratch.png"||listamedbilder[num] == "Whitespace.png"){
-    bild1.style.display = 'none';
-    bild2.style.display = 'block';
+    bild1.classList.add("hidden");
+    bild2.classList.remove("hidden");
     bild2.src = listamedbilder[num];
   }else{
-    bild2.style.display = 'none';
-    bild1.style.display = 'block';
+    bild1.classList.remove("hidden");
+    bild2.classList.add("hidden");
     bild1.innerHTML = listamedbilder[num];
   }
 
@@ -93,7 +93,7 @@ function updatepicture(){
   listamednamn.splice(num, 1); //tar bort den bild som används
   listamedbilder.splice(num, 1);
 
-  listamedalla = ["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace", "Haskell", "Malbogle aka helvetets &aringttonde krets", "Power shell", "unity", "COBOL"];
+  listamedalla = getNames();
   listamedalla.splice(listamedalla.indexOf(tabortnamn), 1);
 
   // genererar fel svar för resterande knappar
@@ -110,21 +110,21 @@ function gameover(){
   // remove buttons
   buttonlist.forEach((button, i) => {
     button.disabled = true;
-    button.style.display = 'none';
+    button.classList.add("hidden")
     button.innerHTML = "";
   });
 
   clocktime = 10;
 
   document.getElementById('h1').innerHTML = "";
-  bild1.innerHTML = "Du fick: " + poang + " po&auml;ng!" + "<br>" + "f&ouml;r badge beh&ouml;ver du 10 po&auml;ng" + "<br>" + "KTHX BYE";
-  bild2.display = 'none';
-  bild1.display = 'block';
+  const meddelande = poang > 9 ?
+    "Bra jobbat! Du har f&ouml;rtj&auml;nat en badge.<br>Koden &auml;r: <b>hejsanworld</b>" :
+    "F&ouml;r att f&aring; en badge beh&ouml;ver du 10 po&auml;ng."
+  bild1.innerHTML = `Du fick: ${poang} po&auml;ng!<br><br>${meddelande}<br><br>KTHX BYE`;
+  bild2.classList.add("hidden");
+  bild1.classList.remove("hidden");
   start.innerHTML = "Starta om";
-  start.style.visibility= 'visible';
-  if(poang > 9){
-    alert("badge: hejsanworld");
-  }
+  start.classList.remove("hidden");
 }
 
 function incorrectanswer(button){
@@ -172,6 +172,7 @@ function lightgreen(button){
   button.classList.add("correct");
   setTimeout(() => button.classList.remove("correct"), 1000);
 }
+
 function createlistamedbilder(){
   listamedbilder = [];
   listamedbilder.push("IT'S SHOWTIME <br> TALK TO THE HAND \"hello world\" <br> YOU HAVE BEEN TERMINATED");
@@ -186,5 +187,9 @@ function createlistamedbilder(){
   listamedbilder.push("Write-Host \'Hello World!\'");
   listamedbilder.push("Debug.Log(\"Hello World\");");
   listamedbilder.push(" <pre> IDENTIFICATION DIVISION. <br> PROGRAM-ID. HELLO-WORLD. <br> * simple hello world program <br> PROCEDURE DIVISION. <br> &#9; DISPLAY 'Hello world!'. <br> &#9; STOP RUN. </pre>");
-  listamednamn=["ArnoldC", "Html", "Java", "LOLCODE", "Python", "Scratch", "Whitespace", "Haskell", "Malbogle (helvetets &aringttonde krets)", "Power shell", "unity", "COBOL"];
+  listamednamn = getNames()
+}
+
+function getNames() {
+  return ["ArnoldC", "HTML", "Java", "LOLCODE", "Python", "Scratch", "Whitespace", "Haskell", "Malbogle (helvetets &aring;ttonde krets)", "Power shell", "Unity", "COBOL"]
 }
