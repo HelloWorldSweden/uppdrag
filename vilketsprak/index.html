@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="https://helloworld.se/wp-content/uploads/2018/03/HW_favicon_glob_transparent.png">
   </head>
   <body>
-    <div id = "container">
-      <div id = "selectbuttons">
-        <button type = "button" id = "button1"></button>
-        <button type = "button" id = "button2"></button>
-        <button type = "button" id = "button3"></button>
-        <button type = "button" id = "button4"></button>
+    <div id="container">
+      <div id="sidebar">
+        <p class="score">
+          <b id = "clock1">Tid:</b> <span id="clock2">10</span>
+        </p>
+        <p class="score">
+          <b>Po&auml;ng:</b> <span id="poang">0</span>
+        </p>
+        <button type = "button" id = "startbutton">START</button>
       </div>
-      <div id = "displayimage">
-        <img id = "bild">
-      </div>
-      <div id = "start">
-        <button type = "button" id = "startbutton">Start</button>
-        <p id = "clock">Start</p>
-      </div>
-      <div id = "score">
-        <p id = "poang">Poang: 0</p>
-        <p id = "liv">Liv: 3</p>
+      <div id="main">
+        <h1 id ="h1">Välkommen!</h1>
+        <div id="displayimage">
+          <code id="bild1">Klicka p&aring; start!</code>
+          <img src="Scratch.png" id ="bild2" class="hidden">
+        </div>
+        <div id = "selectbuttons">
+          <button id="button1" class="answer-button hidden"></button>
+          <button id="button2" class="answer-button hidden"></button>
+          <button id="button3" class="answer-button hidden"></button>
+          <button id="button4" class="answer-button hidden"></button>
+        </div>
       </div>
     </div>
   </body>

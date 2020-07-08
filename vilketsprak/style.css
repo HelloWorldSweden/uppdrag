@@ -1,0 +1,100 @@
+body {
+  font-family: helvetica, arial, sans-serif;
+  height: 100%;
+  margin:0;
+  background-color: #46afb8;
+}
+
+h1 {
+  color: #FFF;
+  text-align: center;
+  margin: 20px 0px;
+}
+
+button {
+  background-color: #057190;
+  color: #FFF;
+  border: 2px solid #FFF;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #46afb8;
+}
+
+#sidebar {
+  padding: 10px;
+  width: 20%;
+}
+
+#container {
+  display:flex;
+  flex-direction:row;
+}
+
+.answer-button {
+  padding: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  margin: 10px 0.5%;
+  border-radius: 20px;
+  width: 23%
+}
+
+.correct {
+  background-color: #00FF00;
+}
+
+.wrong {
+  background-color: #FF0000;
+}
+
+.score {
+  margin-left: 5px;
+  color: #FFF;
+  font-size: 3em;
+}
+
+#startbutton {
+    font-size: 2.5em;
+    border-radius: 5px;
+}
+
+#main {
+  --w: max(50%, 570px);
+  width: var(--w);
+  height: 100%;
+  position: absolute;
+  left: calc((100% - var(--w))*0.5);
+}
+
+#displayimage {
+  background-color: #FFF;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#bild1 {
+  display: block;
+  margin: auto;
+  padding: 0px 8px;
+  object-fit: contain;
+  font-size: 20px;
+}
+#bild2 {
+  display: block;
+  margin: auto;
+  height: 90%;
+  width: 90%;
+  object-fit: contain;
+  font-size: 20px;
+}
+
+#bild1.hidden, #bild2.hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
