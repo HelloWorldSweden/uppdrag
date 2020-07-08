@@ -60,8 +60,8 @@ const levels = [
   {file: "level2_hello.html", code: "vitlöksbröd"},
   {file: "level3_bonjour.html", code: "äppelmos"},
   {file: "level4_ciao.html", code: "badanka"},
-  {file: "level5_privet.html", code: "datamus"},
-  {file: "klar.html", code: "svamp"},
-  {file: "klar.html", code: "en svamp"},
-  {file: "klar.html", code: "svampen"}
+  {file: "level5_privet.html", code: "svamp"},
+  {file: "level5_privet.html", code: "en svamp"},
+  {file: "level5_privet.html", code: "svampen"},
+  {file: "klar.html", code: "datamus"}
 ]
