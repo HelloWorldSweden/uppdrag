@@ -10,7 +10,6 @@ var scoreText = scoreBoxVals[0];
 var livesText = scoreBoxVals[1];
 var hiscoreBox = document.querySelector("#hiscoreBox");
 
-
 var lives = 5;
 var clockTimeout;
 var started = false;
@@ -41,7 +40,7 @@ function start(){
 }
 
 function updateScore(){
-    scoreText.innerHTML = "Poäng: " + score + process.env.TEST;
+    scoreText.innerHTML = "Poäng: " + score;
     livesText.innerHTML = "Liv: " + lives;
 }
 
@@ -50,7 +49,7 @@ function sleep(ms){
 }
 
 function resetColor(){
-    box.style.setProperty("background-color", "aqua");
+    box.style.setProperty("background-color", "var(--game-color)");
     text.style.setProperty("color", "black");
 }
 
@@ -145,7 +144,7 @@ function loseLife(){
     if(lives <= 0){
         updateScore();
         text.style.setProperty("color", "black");
-        box.style.setProperty("background-color", "red");
+        box.style.setProperty("background-color", "var(--lose-color)");
         clock.style.setProperty("clip-path", "polygon(50% 0, 50% 0, 50% 50%)")
         started = false;
         if (score > hiscores[hiscores.length - 1] || hiscores.length < 5){
@@ -183,8 +182,8 @@ function update_hiscore(score){
        hiscores.push(score);
     }
     hiscores.sort((a,b) => b-a);
-    if(hiscores.length > 5){
-        hiscores = hiscores.slice(0,5);
+    if(hiscores.length > 3){
+        hiscores = hiscores.slice(0,3);
     }
     placements.innerHTML = "";
     hiscoreList.innerHTML =  "";

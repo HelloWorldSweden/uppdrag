@@ -1,13 +1,28 @@
+:root{
+    --back-color: rgb(117, 160, 160);
+    --button-color: rgb(22, 156, 156);
+    --button-highlight-color: rgb(17,102,102);
+    --lose-color: rgb(131, 38, 38);
+    --game-color: rgb(22, 156, 156);
+}
+
+
 body {
   font-family: "Nunito";
   margin: 0px;
+  background-color: var(--back-color);
 }
 
+#iframe{
+    position: relative;
+    /* left: calc(50% - 350px); */
+    width: 100%;
+}
 
 #gameBox{
     height: 200px;
     width: 200px;
-    background-color: aqua;
+    background-color: var(--game-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,42 +43,46 @@ body {
 
 #scoreBox{
     height: 200px;
-    width: 200px;
+    width: max(calc(100% - 400px), 200px);
     justify-content: left;
     flex-direction: column;
-    padding-left: 10px;
 }
 
 #scoreBox p{
     font-size: 38px;
+    margin-left: 10px;
 }
 
 #container{
+    width: min(700px, 100%);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #settings{
     display: flex;
     flex-direction: row;
-    width: 270px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
 }
 
 #settings div{
-    height: 200px;
-    width: 45%;
-    flex-direction: column-reverse;
-    margin-right: 10px ;
+    width: max(200px, 45%);
+    display: flex;
+    flex-direction: row;
+
 }
 
 #settings button{
-    background-color: rgb(22, 156, 156);
+    background-color: var(--button-color);
     color: whitesmoke;
     border: none;
-    width: 100%;
+    width: calc(100% / 3);
     height: 60px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 #settings button:hover{
@@ -71,15 +90,16 @@ body {
 }
 
 #settings button.selected{
-    background-color: rgb(17, 102, 102);
+    background-color: var(--button-highlight-color);
 }
 
 #hiscoreBox{
-    background-color: rgb(22,156,156);
-    width: 300px;
+    background-color: var(--button-color);
+    width: 200px;
     display: flex;
     flex-direction: column;
     color: white;
+    font-size: 1rem;
 }
 
 #hiscoreBox h2{
