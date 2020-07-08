@@ -1,3 +1,6 @@
+//Make adaptable, fit in 700px good
+
+
 var box = document.querySelector("#gameBox");
 var text = document.querySelector("#gameBox p");
 var scoreBoxVals = document.querySelectorAll("#scoreBox p");
@@ -38,7 +41,7 @@ function start(){
 }
 
 function updateScore(){
-    scoreText.innerHTML = "Poäng: " + score;
+    scoreText.innerHTML = "Poäng: " + score + process.env.TEST;
     livesText.innerHTML = "Liv: " + lives;
 }
 
