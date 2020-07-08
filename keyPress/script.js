@@ -5,6 +5,7 @@ var clock = document.querySelector("#clock");
 var settings = document.querySelectorAll("#settings button");
 var scoreText = scoreBoxVals[0];
 var livesText = scoreBoxVals[1];
+var hiscoreBox = document.querySelector("#hiscoreBox");
 
 
 var lives = 5;
@@ -13,9 +14,11 @@ var started = false;
 var score = 0;
 var difficultySpeeds = [100, 20, 10]
 var difficultyStart = [8000, 5000, 3000]
-var difficulty = 1;
+var speedLevel = 1;
 var grace = false;
-var chooseSymbols = 0;
+var symbolLevel = 0;
+
+var hiscores = [1,2];
 
 const grace_ms = 200;
 const blink_ms = 300;
@@ -117,14 +120,14 @@ function randomLetter(success){
             }
         }
         updateScore();
-        if(chooseSymbols == 0){
+        if(symbolLevel == 0){
             text.innerHTML = letters[Math.floor(Math.random() * letters.length)];
-        } else if (chooseSymbols == 1){
+        } else if (symbolLevel == 1){
             text.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
-        } else if (chooseSymbols == 2){
+        } else if (symbolLevel == 2){
             text.innerHTML = allSymbols[Math.floor(Math.random() * allSymbols.length)];
         }
-        let delay = difficultyStart[difficulty]/((score+difficultySpeeds[difficulty])/difficultySpeeds[difficulty]);
+        let delay = difficultyStart[speedLevel]/((score+difficultySpeeds[speedLevel])/difficultySpeeds[speedLevel]);
         timer(400, delay - 100);
         grace = true;
         setTimeout(() => {grace = false}, grace_ms);
@@ -142,6 +145,9 @@ function loseLife(){
         box.style.setProperty("background-color", "red");
         clock.style.setProperty("clip-path", "polygon(50% 0, 50% 0, 50% 50%)")
         started = false;
+        if (score > hiscores[hiscores.length - 1] || hiscores.length < 5){
+            update_hiscore(score);
+        }
         return true;
     }
     setTimeout(resetColor, blink_ms);
@@ -155,17 +161,51 @@ function settingClick(element, index){
         case 0:
         case 1:
         case 2:
-            difficulty = index;
+            speedLevel = index;
             break;
 
         case 3:
         case 4:
         case 5:
-            chooseSymbols = index - 3;
+            symbolLevel = index - 3;
             break;
     }
+    load_hiscores();
 }
 
+function update_hiscore(score){
+    placements = hiscoreBox.querySelector("#placements");
+    hiscoreList = hiscoreBox.querySelector("#hiscores");
+    if(score || score === 0){
+       hiscores.push(score);
+    }
+    hiscores.sort((a,b) => b-a);
+    if(hiscores.length > 5){
+        hiscores = hiscores.slice(0,5);
+    }
+    placements.innerHTML = "";
+    hiscoreList.innerHTML =  "";
+    hiscores.forEach((score, index) => {
+        placements.innerHTML += `<p>${index + 1}</p>`;
+        hiscoreList.innerHTML +=  `<p>${score}</p>`;
+    });
+    save_hiscores();
+}
+
+function save_hiscores(){
+    localStorage.setItem(`speedLevel${speedLevel}symbolLevel${symbolLevel}`, JSON.stringify(hiscores));
+}
+
+function load_hiscores(){
+    hiscores = JSON.parse(localStorage.getItem(`speedLevel${speedLevel}symbolLevel${symbolLevel}`));
+    
+    if(!hiscores){
+        hiscores = [];
+    }
+    update_hiscore();
+}
+
+load_hiscores();
 document.addEventListener("keypress", testKey);
 box.addEventListener("click", start);
 settings.forEach((element, index) => {

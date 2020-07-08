@@ -7,7 +7,7 @@ while(!solved)
 
 // Recursivt:
 move(size, start, goal, off){
-     if(size = 0) return;
+     if(size == 0) return
      move(size-1, start, off, goal)
      move_1(start, goal)
      move(size-1, off, goal, start)

@@ -47,12 +47,12 @@ body {
 #settings{
     display: flex;
     flex-direction: row;
-    width: 200px;
+    width: 270px;
 }
 
 #settings div{
     height: 200px;
-    width: 300px;
+    width: 45%;
     flex-direction: column-reverse;
     margin-right: 10px ;
 }
@@ -61,7 +61,7 @@ body {
     background-color: rgb(22, 156, 156);
     color: whitesmoke;
     border: none;
-    width: 120px;
+    width: 100%;
     height: 60px;
     font-size: 1.5rem;
 }
@@ -72,4 +72,35 @@ body {
 
 #settings button.selected{
     background-color: rgb(17, 102, 102);
+}
+
+#hiscoreBox{
+    background-color: rgb(22,156,156);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#hiscoreBox h2{
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-left: 10%;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+#hiscoreBox .row{
+    display: flex;
+    flex-direction: row;
+}
+
+#hiscoreBox .row div{
+    width: 50%;
+    padding: 0 10%;
+}
+
+#hiscoreBox #hiscores{
+    text-align: right;
 }
