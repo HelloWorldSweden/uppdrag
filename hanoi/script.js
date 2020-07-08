@@ -1,4 +1,5 @@
 var gameBox = document.querySelector("#hanoiGameBox");
+var towerBox = document.querySelector("#towerBox");
 var scoreBox = document.querySelector("#scoreBox");
 var resetButton = document.querySelector("#resetButton");
 var blockSlider = document.querySelector("#blockSlider");
@@ -9,6 +10,7 @@ var moves = 0;
 var box = gameBox.getBoundingClientRect();
 var Yref = box.top;
 var Xref = box.left;
+var boxWidth = box.right - box.left;
 
 var n_towers = 3;
 var n_blocks = 3;
@@ -20,17 +22,18 @@ function setup(){
 
     for(i = 0; i < n_towers; i++){
         let new_tower = document.createElement("div");
-        gameBox.insertBefore(new_tower, scoreBox);
+        towerBox.appendChild(new_tower);
         new_tower.classList.add("tower");
+        new_tower.innerHTML = "<div class='stick'></div>"
     }
-    var towerElements = gameBox.querySelectorAll(".tower");
+    var towerElements = towerBox.querySelectorAll(".tower");
 
     for(i = 0; i < n_blocks; i++){
         let new_block = document.createElement("div");
         towerElements[0].appendChild(new_block);
         new_block.classList.add("block");
     }
-    var blockElements = gameBox.querySelectorAll(".block");
+    var blockElements = towerBox.querySelectorAll(".block");
 
 
     towerElements.forEach((element, index) => {
@@ -42,7 +45,7 @@ function setup(){
     });
 
     blockElements.forEach((element,index) => {
-    element.style.setProperty("--i", 40 + (index+1)*120/n_blocks+"px");
+    element.style.setProperty("--i", 20+80*((index+1)/n_blocks) + "%");
     element.style.setProperty("height", Math.min(120/n_blocks, 30)+"px");
     block = ({
         element: element,
@@ -75,6 +78,7 @@ function relativeXY(event){
 }
 
 function lock(event, block){
+    event.preventDefault();
     if(legal_lift(block)){
         block.locked = true;
         [x,y] = relativeXY(event)
@@ -103,7 +107,7 @@ function release(event){
             pos = x - 50;
             
             // x/155 or max index
-            tower_i = Math.min(n_towers-1, Math.floor(pos/160))
+            tower_i = Math.min(n_towers-1, Math.floor(pos/((boxWidth-100)/n_towers)))
             switch_tower(block, block.tower, tower_i);
             block.element.style.setProperty("transform", "");
         }
@@ -140,7 +144,7 @@ function switch_tower(block, fromTowerIndex, toTowerIndex){
 function reset(){
     moves = 0;
     towers.forEach(tower => {
-        gameBox.removeChild(tower.element);
+        towerBox.removeChild(tower.element);
     });
     blocks = [];
     towers = [];
