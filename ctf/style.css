@@ -100,6 +100,10 @@ button:hover {
   color: #212e5c;
   border-color: #212e5c;
 }
+.form-button:hover {
+  color: #212e5c;
+  border-color: #212e5c;
+}
 
 img {
   width: 60%;
@@ -127,4 +131,7 @@ a {
 
 .osynlig {
   visibility: hidden;
+}
+#gömdig{
+  display: none;
 }
