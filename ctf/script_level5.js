@@ -64,7 +64,7 @@ function consolelog1(){
     toggle1 = toggle1 + 1;
   }
   if(toggle1 == 2){
-      console.log("p{emgnæt7   nyckel:  2");
+      console.log("p{emgnæt5   nyckel:  2");
   }
 }
 
