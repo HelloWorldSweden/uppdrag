@@ -122,7 +122,7 @@ function randomLetter(success){
         if(!success){
             dead = loseLife();
             if(dead){
-                if(symbolLevel == 2 && score >= 2){
+                if(symbolLevel == 2 && score >= 20){
                     pass = "hitta" + symbols[370 % 17] + "alla" + symbols[1003 % 17]
                     scoreBoxVals[2].innerHTML = "Lösenord: " + pass;
                     save_password(pass);
