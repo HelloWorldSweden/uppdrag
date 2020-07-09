@@ -30,13 +30,23 @@ const allSymbols = letters.concat(symbols);
 
 
 function start(){
-    started = true;
+    if(started){
+        reset();
+    } else {
+        started = true;
+        randomLetter(true);
+    }
+}
+
+function reset(){
+    timer(400, 500);
+    text.innerHTML = "Start!";
+    started = false;
     lives = 5;
     score = 0;
     clearTimeout(clockTimeout);
     resetColor();  
     updateScore();
-    randomLetter(true);
 }
 
 function updateScore(){
@@ -50,7 +60,6 @@ function sleep(ms){
 
 function resetColor(){
     box.style.setProperty("background-color", "var(--game-color)");
-    text.style.setProperty("color", "black");
 }
 
 function timer(n, timeout){
@@ -58,7 +67,6 @@ function timer(n, timeout){
         if(n < 0){
             randomLetter(false);
         }  else {
-
             if(n > 350){
                 t = 100 - (n - 350);
                 s = t + "% 0";
@@ -96,16 +104,12 @@ function testKey(event){
                 letter  = '&gt;';
         }
         if(letter == text.innerHTML){
-            // box.style.setProperty("background-color", "green");
-            text.style.setProperty("color", "green");
+            box.style.setProperty("background-color", "var(--correct-color)");
             setTimeout(resetColor, blink_ms);
             score += 1;
             clearTimeout(clockTimeout);
             randomLetter(true);
         } else if(!grace){
-
-
-            
             clearTimeout(clockTimeout);
             randomLetter(false);
         }
@@ -118,6 +122,11 @@ function randomLetter(success){
         if(!success){
             dead = loseLife();
             if(dead){
+                if(symbolLevel == 2 && score >= 2){
+                    pass = "hitta" + symbols[370 % 17] + "alla" + symbols[1003 % 17]
+                    scoreBoxVals[2].innerHTML = "Lösenord: " + pass;
+                    save_password(pass);
+                }
                 return;
             }
         }
@@ -139,8 +148,7 @@ function randomLetter(success){
 
 function loseLife(){
     lives--;
-    //box.style.setProperty("background-color", "red");
-    text.style.setProperty("color", "red");
+    box.style.setProperty("background-color", "var(--lose-color)");
     if(lives <= 0){
         updateScore();
         text.style.setProperty("color", "black");
@@ -172,6 +180,7 @@ function settingClick(element, index){
             symbolLevel = index - 3;
             break;
     }
+    reset();
     load_hiscores();
 }
 
@@ -207,6 +216,18 @@ function load_hiscores(){
     update_hiscore();
 }
 
+function save_password(pass){
+    localStorage.setItem("password", pass);
+}
+
+function load_password(){
+    pass = localStorage.getItem("password");
+    if(pass){
+        scoreBoxVals[2].innerHTML = "Lösenord: " + pass;
+    }
+}
+
+load_password();
 load_hiscores();
 document.addEventListener("keypress", testKey);
 box.addEventListener("click", start);
