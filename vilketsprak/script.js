@@ -118,7 +118,7 @@ function gameover(){
 
   document.getElementById('h1').innerHTML = "";
   const meddelande = poang > 9 ?
-    "Bra jobbat! Du har f&ouml;rtj&auml;nat en badge.<br>Koden &auml;r: <b>hejsanworld</b>" :
+    "Bra jobbat! Du har f&ouml;rtj&auml;nat en badge.<br>Koden &auml;r: <b>hejsanworld!</b>" :
     "F&ouml;r att f&aring; en badge beh&ouml;ver du 10 po&auml;ng."
   bild1.innerHTML = `Du fick: ${poang} po&auml;ng!<br><br>${meddelande}<br><br>KTHX BYE`;
   bild2.classList.add("hidden");
