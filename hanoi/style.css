@@ -12,7 +12,6 @@ body{
 
 
 #hanoiGameBox{
-    width: 600px;
     padding: 50px;
     display: flex;
     flex-direction: row;
