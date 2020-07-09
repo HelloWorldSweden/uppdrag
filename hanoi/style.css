@@ -10,10 +10,6 @@ body{
     background-color: var(--slider-handle);
 }
 
-#iframe{
-    width: 700px;
-    position: absolute;
-}
 
 #hanoiGameBox{
     padding: 50px;
@@ -79,7 +75,6 @@ body{
     padding-left: 5%;
 }
 
-
 button{
     background-color: var(--button-color);
     color: rgb(245, 245, 245);
@@ -107,7 +102,6 @@ button{
     width: 20px;
     border-radius: 50%;
 }
-
 
 .slider::-moz-range-thumb{
     cursor: pointer;

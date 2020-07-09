@@ -7,39 +7,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="iframe">
-        <div id=container>
-            <div id=gameBox>
-                <div id=clock></div>
-                <p>Start!</p>
+    <div id=container>
+        <div id=gameBox>
+            <div id=clock></div>
+            <p>Start!</p>
+        </div>
+        <div id=scoreBox>
+            <p>Poäng: 0</p>
+            <p>Liv: 5</p>
+        </div>
+        <div id="hiscoreBox">
+            <h2>Toppresultat</h2>
+            <div class="row">
+                <div id="placements"></div>
+                <div id="hiscores"></div>
             </div>
-            <div id=scoreBox>
-                <p>Poäng: 0</p>
-                <p>Liv: 5</p>
+        </div>
+        <div id=settings>
+            <div id=speed>
+                <button>Långsamt</button>
+                <button class=selected>Normalt</button>
+                <button>Snabbt</button>
             </div>
-            <div id="hiscoreBox">
-                <h2>Toppresultat</h2>
-                <div class="row">
-                    <div id="placements"></div>
-                    <div id="hiscores"></div>
-                </div>
+            <div id=keys>
+                <button class=selected>Bokstäver</button>
+                <button>Symboler</button>
+                <button>Blandat</button>
             </div>
-            <div id=settings>
-                <div id=speed>
-                    <button>Långsamt</button>
-                    <button class=selected>Normalt</button>
-                    <button>Snabbt</button>
-                </div>
-                <div id=keys>
-                    <button class=selected>Bokstäver</button>
-                    <button>Symboler</button>
-                    <button>Blandat</button>
-                </div>
-            </div>
-            
         </div>
     </div>
-    
 </body>
 <script src="script.js"></script>
 </html>

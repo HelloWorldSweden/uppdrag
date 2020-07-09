@@ -13,11 +13,6 @@ body {
   background-color: var(--back-color);
 }
 
-#iframe{
-    position: relative;
-    /* left: calc(50% - 350px); */
-    width: 100%;
-}
 
 #gameBox{
     height: 200px;
