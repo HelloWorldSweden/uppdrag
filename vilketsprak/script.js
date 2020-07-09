@@ -38,21 +38,13 @@ function starta(){
 }
 
 function clockfunc(){
-  if (clocktime < 0){
-    if(listamedbilder.length){
-      timeOut();
-    }
-    if(listamedbilder.length == 0){
-      return;
-    }
-  }else{
+  if (clocktime < 0) {
+    timeOut();
+  } else {
     if (clocktime < 4){
       clock2.style.color = "#FF0000";
     }else{
       clock2.style.color = "#FFFFFF";
-    }
-    if(listamedbilder.length== 0){
-      return;
     }
     clock2.innerHTML = clocktime;
     clocktime = clocktime - 1;
