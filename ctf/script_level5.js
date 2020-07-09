@@ -7,7 +7,6 @@ var resultat = document.getElementById('resultat');
 var formbutton = document.getElementById('form-button');
 var toggle1 = 0;
 var toggle2 = 0;
-var toggle3 = 0;
 hidestuff();
 
 function prank(){
@@ -60,7 +59,7 @@ function hidestuff(){
 }
 
 function consolelog1(){
-  if (toggle3 == 0){
+  if (toggle2 == 1){
     toggle1 = toggle1 + 1;
   }
   if(toggle1 == 2){
@@ -71,6 +70,7 @@ function consolelog1(){
 function consolelog2(){
   if(toggle2 == 0){
     toggle1 = toggle1 + 1;
+    toggle2 = toggle2 + 1;
   }
   console.log("opmgoetélmrx   nyckel:   4");
 }
