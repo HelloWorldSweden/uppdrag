@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HW! A.R.G</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abel&display=swap">
+    <!-- add website icon -->
+    <link rel="icon" href="https://cdn.glitch.com/9f283387-d235-4e18-8461-e5d9e2d2c5da%2Ffavicon.png?v=1593503631622">
+
+  </head>
+  <body class="main">
+    <!-- Huvudrubrik -->
+    <h1 id="head">
+      Nyckel 2 Hittad!
+    </h1>
+  
+    <!-- Beskrivning -->
+    <div class="plain-text">
+      <p>
+        Grattis till att hittat de första två nycklarna! 
+      </p>
+      <p>
+        Nu blir det lite svårare... 
+      </p>
+      <p>
+        Kom ihåg att du kan använda dig av <a href="https://docs.google.com/document/d/1qgT0Y3N1XPlhd6UDYk5e8YgKty_8YLD9UDBTzoYmhbo/edit">Verktygslådan</a>!
+      </p>
+      <p class="center-text">
+        <b>
+          <img class="center small-image" src="https://cdn.glitch.com/5fb85b5a-9086-43ec-9239-c21a53bd1998%2FN3.png?v=1594221842078"</img>
+        </b>
+      </p>
+    </div>
+    
+    <div id="hint" >
+      <button onclick="showHint()" id="hint-button">VISA HINT</button>
+      <p class="dold plain-text">
+        <b>HINT:</b>
+          <img class="center small-image" src="https://cdn.glitch.com/5fb85b5a-9086-43ec-9239-c21a53bd1998%2FN3a.png?v=1594220381871">
+
+      </p>
+    </div>
+
+    <!-- Rutan med input -->
+    <div id="form">
+      <input type="text" placeholder="Nyckel 3" id="code" required/>
+      <button onclick="evaluateForm()" id="form-button">Enter</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

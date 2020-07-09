@@ -1,0 +1,146 @@
+/* CSS files add styling rules to your content */
+
+
+
+body {
+  font-family: 'Abel', sans-serif;
+  margin: 2em;
+  margin: 0 auto; 
+
+
+}
+
+.main {
+   background: black;
+   background-size: 1600% 1600%;
+   animation: AnimationName 10s ease infinite;
+   text-align:center;
+
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 44%}
+    50%{background-position:100% 57%}
+    100%{background-position:0% 44%}
+}
+
+h1 {text-align: center;}
+p {text-align: center;}
+b {text-align: center;}
+div {text-align: center;}
+audio {margin:0 auto;}
+
+.blink {
+  background: linear-gradient(356deg, #e33636, #0bb721);
+  background-size: 1600% 1600%;
+  animation: Blink 2s ease infinite;
+}
+
+@keyframes Blink {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+
+h1 {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  text-align: center;
+  color: #337BC9;
+  font-size: 5rem;
+  word-spacing: 30px;
+}
+
+.plain-text {
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: justify;
+  padding: 0px 15%;
+  margin-bottom: 10px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+#form {
+  width: 70%;
+  margin: 20px auto;
+  background-color: #000000;
+  padding: 2%;
+  border-radius: 20px;
+}
+
+#form.wrong {
+  background-color: red;
+}
+
+input {
+  width: 90%;
+  display: block;
+  margin: 3% auto;
+  padding: 2%;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2rem;
+}
+
+button {
+  padding: 5px 8px;
+  border-radius: 20px;
+  background: none;
+  border: 3px solid #ffffff;
+  font-size: 1.3rem;
+  display: block;
+  margin: 0 auto;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  color: orange;
+  border-color: orange;
+}
+
+#form-button {
+  border-radius: 0px;
+  padding: 2% 8%;
+}
+
+#form-button:hover {
+  color: orange;
+  border-color: orange;
+}
+
+img {
+  width: 60%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 2px;
+  border: 3px solid orange;
+}
+
+.small-image {
+  width: 400px;
+}
+
+a {
+  color:orange;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dold {
+  display: none;
+}
+
+.osynlig {
+  visibility: hidden;
+}
+
+#pic{
+  color: white;
+}
