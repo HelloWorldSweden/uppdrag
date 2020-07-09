@@ -38,21 +38,13 @@ function starta(){
 }
 
 function clockfunc(){
-  if (clocktime < 0){
-    if(listamedbilder.length){
-      timeOut();
-    }
-    if(listamedbilder.length == 0){
-      return;
-    }
-  }else{
+  if (clocktime < 0) {
+    timeOut();
+  } else {
     if (clocktime < 4){
       clock2.style.color = "#FF0000";
     }else{
       clock2.style.color = "#FFFFFF";
-    }
-    if(listamedbilder.length== 0){
-      return;
     }
     clock2.innerHTML = clocktime;
     clocktime = clocktime - 1;
@@ -99,7 +91,7 @@ function updatepicture(){
   // genererar fel svar för resterande knappar
   buttonlist.forEach((button, i) => {
     if (i != thebutton) {
-      var rand = Math.floor(Math.random(listamedalla.length));
+      var rand = Math.floor(Math.random()*listamedalla.length);
       button.innerHTML = listamedalla[rand];
       listamedalla.splice(rand,1);
     }
