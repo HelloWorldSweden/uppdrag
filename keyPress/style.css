@@ -1,18 +1,27 @@
 :root{
-    --back-color: rgb(117, 160, 160);
+    --back-color: rgb(109, 214, 214);
     --button-color: rgb(22, 156, 156);
     --button-highlight-color: rgb(17,102,102);
-    --lose-color: rgb(131, 38, 38);
+    --lose-color: rgb(218, 40, 40);
     --game-color: rgb(22, 156, 156);
+    --correct-color: rgb(72, 192, 72);
 }
 
 
 body {
   font-family: "Nunito";
   margin: 0px;
-  background-color: var(--back-color);
+  background-color: #fff;
 }
 
+#container{
+    width: min(700px, 100%);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--back-color);
+}
 
 #gameBox{
     height: 200px;
@@ -44,17 +53,10 @@ body {
 }
 
 #scoreBox p{
-    font-size: 38px;
+    font-size: 26px;
     margin-left: 10px;
 }
 
-#container{
-    width: min(700px, 100%);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
 #settings{
     display: flex;
