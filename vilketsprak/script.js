@@ -91,7 +91,7 @@ function updatepicture(){
   // genererar fel svar för resterande knappar
   buttonlist.forEach((button, i) => {
     if (i != thebutton) {
-      var rand = Math.floor(Math.random(listamedalla.length));
+      var rand = Math.floor(Math.random()*listamedalla.length);
       button.innerHTML = listamedalla[rand];
       listamedalla.splice(rand,1);
     }
