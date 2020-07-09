@@ -27,10 +27,10 @@ function evaluateForm(){
   var codeElement = document.getElementById("code")
   var code = codeElement.value
   const codeMatch = levels.filter(level => level.code === code.toLowerCase())[0] // Find the first level that matches the code
-  
+
   // Reset values
   codeElement.value = ""
-  
+
   if (codeMatch){
     // Send to new page
     window.location.assign(codeMatch.file)
@@ -46,7 +46,7 @@ var inputs = codeElement ? [codeElement] : []
 
 inputs.forEach(input => {
   input.addEventListener("keyup", function(event){
-    if (event.keyCode === 13){ // Using the key ENTER should invoke the button  
+    if (event.keyCode === 13){ // Using the key ENTER should invoke the button
       document.getElementById("form-button").click()
     }
   })
@@ -60,7 +60,8 @@ const levels = [
   {file: "level2_hello.html", code: "vitlöksbröd"},
   {file: "level3_bonjour.html", code: "äppelmos"},
   {file: "level4_ciao.html", code: "badanka"},
-  {file: "klar.html", code: "svamp"},
-  {file: "klar.html", code: "en svamp"},
-  {file: "klar.html", code: "svampen"}
+  {file: "level5_privet.html", code: "svamp"},
+  {file: "level5_privet.html", code: "en svamp"},
+  {file: "level5_privet.html", code: "svampen"},
+  {file: "klar.html", code: "datamus"}
 ]
