@@ -169,11 +169,11 @@ function changeTowerNumber(){
 }
 
 function save_password(pass){
-    localStorage.setItem("password", pass);
+    localStorage.setItem("password_hanoi", pass);
 }
 
 function load_password(){
-    pass = localStorage.getItem("password");
+    pass = localStorage.getItem("password_hanoi");
     if(pass){
         scoreBox.querySelector("#complete").innerHTML = "Lösenord: " + pass;
     }else {

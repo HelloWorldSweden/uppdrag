@@ -217,11 +217,11 @@ function load_hiscores(){
 }
 
 function save_password(pass){
-    localStorage.setItem("password", pass);
+    localStorage.setItem("password_keyPress", pass);
 }
 
 function load_password(){
-    pass = localStorage.getItem("password");
+    pass = localStorage.getItem("password_keyPress");
     if(pass){
         scoreBoxVals[2].innerHTML = "Lösenord: " + pass;
     }
