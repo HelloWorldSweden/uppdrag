@@ -134,7 +134,14 @@ function switch_tower(block, fromTowerIndex, toTowerIndex){
         moves++;
         updateScore();
         if(complete()){
-            scoreBox.querySelector("#complete").innerHTML = "Grattis! Du klarade det!";
+            finishedText = scoreBox.querySelector("#complete");
+            if (n_blocks > 2 && n_towers == 3){
+                password = "flytta-rätt"
+                finishedText.innerHTML = "Lösenord: " + password;
+                save_password(password);
+            } else {
+                finishedText.innerHTML = "Så lätt ska det inte vara!" 
+            }
         }
     }
 }
@@ -148,7 +155,7 @@ function reset(){
     towers = [];
     setup();
     updateScore();
-    scoreBox.querySelector("#complete").innerHTML = "";
+    load_password();
 }
 
 function changeBlockNumber(){
@@ -161,7 +168,21 @@ function changeTowerNumber(){
     reset();    
 }
 
+function save_password(pass){
+    localStorage.setItem("password_hanoi", pass);
+}
+
+function load_password(){
+    pass = localStorage.getItem("password_hanoi");
+    if(pass){
+        scoreBox.querySelector("#complete").innerHTML = "Lösenord: " + pass;
+    }else {
+        scoreBox.querySelector("#complete").innerHTML = "";
+    }
+}
+
 setup();
+load_password();
 document.addEventListener("mousemove", move);
 document.addEventListener("mouseup", release);
 resetButton.addEventListener("click", reset);
