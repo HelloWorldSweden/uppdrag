@@ -105,7 +105,9 @@ function release(event){
             block.locked = false;
             [x,y] = relativeXY(event);
             pos = x - 50;
-            tower_i = Math.min(n_towers-1, Math.floor(pos/((boxWidth-100)/n_towers)))
+            tower_i = Math.max(Math.min(n_towers-1, Math.floor(pos/((boxWidth-100)/n_towers))),0);
+            console.log(tower_i);
+            
             switch_tower(block, block.tower, tower_i);
             block.element.style.setProperty("transform", "");
         }
