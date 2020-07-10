@@ -9,6 +9,15 @@ var toggle1 = 0;
 var toggle2 = 0;
 hidestuff();
 
+var inputs = [messageform, keyform].filter(form => form)
+inputs.forEach(input => {
+  input.addEventListener("keyup", function(event){
+    if (event.keyCode === 13){ // Using the key ENTER in the form should invoke the button
+      document.getElementById("trybutton").click()
+    }
+  })
+})
+
 function prank(){
   pranktext.innerHTML = "Här har du: gdwdpxv <br> HAHA! Så enkelt är det inte, jag har krypterat meddelandet! <br> För att klara nivån måste du hitta nyckeln till krypteringen"
   showstuff();

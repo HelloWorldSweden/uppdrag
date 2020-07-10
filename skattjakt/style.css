@@ -3,15 +3,19 @@
 
 
 body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: 'Abel', sans-serif;
   margin: 2em;
+  margin: 0 auto; 
+
 
 }
 
 .main {
-   background: linear-gradient(340deg, #212e5c, #131836, #06080f);
+   background: black;
    background-size: 1600% 1600%;
    animation: AnimationName 10s ease infinite;
+   text-align:center;
+
 }
 
 @keyframes AnimationName {
@@ -19,6 +23,12 @@ body {
     50%{background-position:100% 57%}
     100%{background-position:0% 44%}
 }
+
+h1 {text-align: center;}
+p {text-align: center;}
+b {text-align: center;}
+div {text-align: center;}
+audio {margin:0 auto;}
 
 .blink {
   background: linear-gradient(356deg, #e33636, #0bb721);
@@ -33,9 +43,9 @@ body {
 }
 
 h1 {
-  font-family: 'Monoton', cursive;
+  font-family: 'Montserrat Subrayada', sans-serif;
   text-align: center;
-  color: #ffffff;
+  color: #337BC9;
   font-size: 5rem;
   word-spacing: 30px;
 }
@@ -53,15 +63,15 @@ h1 {
 }
 
 #form {
-  width: 50%;
+  width: 70%;
   margin: 20px auto;
-  background-color: #1f8ded;
+  background-color: #000000;
   padding: 2%;
   border-radius: 20px;
 }
 
 #form.wrong {
-  background-color: #e82045;
+  background-color: red;
 }
 
 input {
@@ -87,8 +97,8 @@ button {
 }
 
 button:hover {
-  color: #6fb3ed;
-  border-color: #6fb3ed;
+  color: orange;
+  border-color: orange;
 }
 
 #form-button {
@@ -97,22 +107,24 @@ button:hover {
 }
 
 #form-button:hover {
-  color: #212e5c;
-  border-color: #212e5c;
+  color: orange;
+  border-color: orange;
 }
 
 img {
   width: 60%;
   margin-bottom: 20px;
   margin-top: 20px;
+  padding: 2px;
+  border: 3px solid orange;
 }
 
 .small-image {
-  width: 300px;
+  width: 400px;
 }
 
 a {
-  color: #1f8ded;
+  color:orange;
 }
 
 .center {
@@ -128,6 +140,7 @@ a {
 .osynlig {
   visibility: hidden;
 }
-#gömdig{
-  display: none;
+
+#pic{
+  color: white;
 }

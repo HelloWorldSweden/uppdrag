@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HW! A.R.G</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&display=swap">
+    <!-- add website icon -->
+    <link rel="icon" href="https://cdn.glitch.com/9f283387-d235-4e18-8461-e5d9e2d2c5da%2Ffavicon.png?v=1593503631622">
+
+  </head>
+  <body class="main">
+    <!-- Huvudrubrik -->
+    <h1 id="head">
+      Digitala skattjakt
+    </h1>
+
+    <!-- Beskrivning -->
+    <div class="plain-text">
+      <p>
+        Vällkommen till Hello worlds egna Alternate Reality Game
+      </p>
+  <p>
+    Det finns fem utmaningar att klara av
+
+      </p>
+    <p>
+      Som hjälp får ni den här <a href="https://docs.google.com/document/d/1qgT0Y3N1XPlhd6UDYk5e8YgKty_8YLD9UDBTzoYmhbo/edit">Verktygslådan</a>
+    </p>
+    <p >
+      Varje utmaning har ett lösenord
+    </p>
+      <p>
+        Lycka till!
+      </p>
+      <video width="620" height="480" class="center" controls>
+  <source src="https://cdn.glitch.com/5fb85b5a-9086-43ec-9239-c21a53bd1998%2FARG_Intro.mp4?v=1594214735829" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+        <div id="hint" >
+      <button onclick="showHint()" id="hint-button">VISA HINT</button>
+      <p class="dold plain-text" id="pic">
+        <b>HINT:        </b>
+        <img class="center small-image" src="https://cdn.glitch.com/5fb85b5a-9086-43ec-9239-c21a53bd1998%2FN1a.png?v=1594220371546">
+
+      </p>
+    </div>
+    <div id="form">
+      <input type="text" placeholder="Nyckel 1" id="code" required="">
+      <button onclick="evaluateForm()" id="form-button">Enter</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
