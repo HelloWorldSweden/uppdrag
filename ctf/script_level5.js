@@ -19,7 +19,7 @@ inputs.forEach(input => {
 })
 
 function prank(){
-  pranktext.innerHTML = "Här har du: gdwdpxv <br> HAHA! Så enkelt är det inte, jag har krypterat meddelandet! <br> För att klara nivån måste du hitta nyckeln till krypteringen"
+  pranktext.innerHTML = "Här har du: mj}jv~| <br> HAHA! Så enkelt är det inte, jag har krypterat meddelandet! <br> För att klara nivån måste du hitta nyckeln till krypteringen"
   showstuff();
 }
 
@@ -72,7 +72,7 @@ function consolelog1(){
     toggle1 = toggle1 + 1;
   }
   if(toggle1 == 2){
-      console.log("p{emgnæt5   nyckel:  2");
+      console.log("vksmtvìzA   nyckel:  8");
   }
 }
 
@@ -81,5 +81,5 @@ function consolelog2(){
     toggle1 = toggle1 + 1;
     toggle2 = toggle2 + 1;
   }
-  console.log("opmgoetélmrx   nyckel:   4");
+  console.log("~|muzïrsx~   nyckel:   10");
 }
