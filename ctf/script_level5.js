@@ -7,6 +7,7 @@ var resultat = document.getElementById('resultat');
 var formbutton = document.getElementById('form-button');
 var toggle1 = 0;
 var toggle2 = 0;
+var toggle3 = 0;
 hidestuff();
 
 var inputs = [messageform, keyform].filter(form => form)
@@ -72,6 +73,7 @@ function consolelog1(){
     toggle1 = toggle1 + 1;
   }
   if(toggle1 == 2){
+      toggle1 = toggle1 + 1;
       console.log("vksmtvìzA   nyckel:  8");
   }
 }
@@ -81,5 +83,8 @@ function consolelog2(){
     toggle1 = toggle1 + 1;
     toggle2 = toggle2 + 1;
   }
-  console.log("~|muzïrsx~   nyckel:   10");
+  if (toggle3 == 0){
+    toggle3 = toggle3 + 1;
+    console.log("~|muzïrsx~   nyckel:   10");
+  }
 }
