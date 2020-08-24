@@ -1,12 +1,3 @@
-<?php
-password = $_POST['password'];
-if(!is_null(password){
- if(password == "21/5/15"){ //Eller det lösenordet som tillhör den sidan
-   header("Location: https://uppdrag.helloworld.se/skattjakt/Nyckel1_21_5_15.html"); //Redirect, ändra till den uppgift som kommer efter
- }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,12 +49,10 @@ Your browser does not support the video tag.
 
       </p>
     </div>
-    <!-- Rutan med input -->
-    <form id="form" action="/Nyckel1_21_5_15.php" method="post">
-        <input type="text" placeholder="Nyckel 2" id="password" required="">
-        <button onclick="evaluateForm()" id="form-button">Enter</button>
-    </form>
-    <script src="./HW! A.R.G_files/script.js.nedladdning"></script>
+    <div id="form">
+      <input type="text" placeholder="XX/X/XX" id="code" required="">
+      <button onclick="evaluateForm()" id="form-button">Enter</button>
+    </div>
 
     <script src="script.js"></script>
   </body>
