@@ -1,3 +1,17 @@
+<?php
+$falseflag = false;
+if(isset($_POST['password'])) {
+  $password = $_POST['password'];
+  if(!is_null($password)){
+   if($password == "datamus"){ //Eller det lösenordet som tillhör den sidan
+     header("Location: https://uppdrag.helloworld.se/ctf/klar.html"); //Redirect, ändra till den uppgift som kommer efter
+   }else{
+     $falseflag = true;
+   }
+  }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,10 +70,16 @@
     </div>
 
     <!-- Rutan med input -->
-    <div id="form">
-      <input type="text" placeholder="Lösenord" id="code" required/>
-      <button id = "form-button" onclick="evaluateForm()" class="form-button">TESTA</button>
-    </div>
+    <?php
+    if(!$falseflag){
+      echo "<form id='form' action='https://uppdrag.helloworld.se/ctf/level5_privet.php#form' method='post'>";
+    }else{
+      echo "<form class ='formblink' id='form' action='https://uppdrag.helloworld.se/ctf/level5_privet.php#form' method='post'>";
+    }
+    ?>
+        <input type="text" placeholder="Lösenord" id="password" name = "password" required="">
+        <input type = "submit" id="form-button" value = "enter">
+    </form>
     <script src="script.js"></script>
     <script src="script_level5.js"></script>
   </body>

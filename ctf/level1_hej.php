@@ -1,3 +1,17 @@
+<?php
+$falseflag = false;
+if(isset($_POST['password'])) {
+  $password = $_POST['password'];
+  if(!is_null($password)){
+   if($password == "vitlöksbröd"){ //Eller det lösenordet som tillhör den sidan
+     header("Location: https://uppdrag.helloworld.se/ctf/level2_hello.php"); //Redirect, ändra till den uppgift som kommer efter
+   }else{
+     $falseflag = true;
+   }
+  }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +32,7 @@
     <h1 id="head">
       Level 1
     </h1>
-  
+
     <!-- Beskrivning -->
     <div class="plain-text">
       <p>
@@ -39,7 +53,7 @@
         </b>
       </p>
     </div>
-    
+
     <div id="hint" >
       <button onclick="showHint()" id="hint-button">VISA HINT</button>
       <p class="dold plain-text">
@@ -52,10 +66,16 @@
     </div>
 
     <!-- Rutan med input -->
-    <div id="form">
-      <input type="text" placeholder="Lösenord" id="code" required/>
-      <button onclick="evaluateForm()" id="form-button">TESTA</button>
-    </div>
+    <?php
+    if(!$falseflag){
+      echo "<form id='form' action='https://uppdrag.helloworld.se/ctf/level1_hej.php#form' method='post'>";
+    }else{
+      echo "<form class ='formblink' id='form' action='https://uppdrag.helloworld.se/ctf/level1_hej.php#form' method='post'>";
+    }
+    ?>
+        <input type="text" placeholder="Lösenord" id="password" name = "password" required="">
+        <input type = "submit" id="form-button" value = "enter">
+    </form>
     <script src="script.js"></script>
     <script src="script_level1.js"></script>
   </body>

@@ -51,17 +51,3 @@ inputs.forEach(input => {
     }
   })
 })
-
-
-// Om du hittat hit innebär det att du verkligen har dykt djupt i DevTools
-// Grattis! Vet du hur du ska utnyttja denna information för att klara uppdraget?
-const levels = [
-  {file: "level1_hej.html", code: "start"},
-  {file: "level2_hello.html", code: "vitlöksbröd"},
-  {file: "level3_bonjour.html", code: "äppelmos"},
-  {file: "level4_ciao.html", code: "badanka"},
-  {file: "level5_privet.html", code: "svamp"},
-  {file: "level5_privet.html", code: "en svamp"},
-  {file: "level5_privet.html", code: "svampen"},
-  {file: "klar.html", code: "datamus"}
-]

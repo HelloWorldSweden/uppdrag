@@ -52,16 +52,23 @@ h1 {
   text-align: center;
 }
 
-#form {
-  width: 50%;
+#form{
+  width: 70%;
   margin: 20px auto;
-  background-color: #1f8ded;
   padding: 2%;
   border-radius: 20px;
+  background-color: black;
 }
 
-#form.wrong {
-  background-color: #e82045;
+.formblink{
+  background-color: black;
+  animation-name: wrong;
+  animation-duration: 2s;
+}
+
+@keyframes wrong {
+  from {background-color: red;}
+  to {background-color: black;}
 }
 
 input {

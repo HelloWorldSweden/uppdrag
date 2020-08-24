@@ -1,3 +1,11 @@
+<?php
+password = $_POST['password'];
+if(!is_null(password){
+ if(password == "jordglob"){ //Eller det lösenordet som tillhör den sidan
+   header("Location: https://uppdrag.helloworld.se/skattjakt/Nyckel2_Jordglob.html"); //Redirect, ändra till den uppgift som kommer efter
+   }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,11 +26,11 @@
     <h1 id="head">
       Nyckel 1 Hittad!
     </h1>
-  
+
     <!-- Beskrivning -->
     <div class="plain-text">
       <p>
-        Grattis till att hitta första nyckeln! 
+        Grattis till att hitta första nyckeln!
       </p>
       <p>
         Är du redo för nästa utmaning?
@@ -33,22 +41,22 @@
         </b>
       </p>
     </div>
-    
+
     <div id="hint" >
       <button onclick="showHint()" id="hint-button">VISA HINT</button>
       <p class="dold plain-text">
         <b>HINT:
                    <img class="center small-image" src="https://cdn.glitch.com/5fb85b5a-9086-43ec-9239-c21a53bd1998%2FN2a.png?v=1594220381871">
 </b>
-        
+
       </p>
     </div>
 
     <!-- Rutan med input -->
-    <div id="form">
-      <input type="text" placeholder="Nyckel 2" id="code" required/>
+    <form id="form" action="/Nyckel1_21_5_15.php" method="post">
+      <input type="text" placeholder="Nyckel 2" id="password" required=""
       <button onclick="evaluateForm()" id="form-button">Enter</button>
-    </div>
-    <script src="script.js"></script>
+    </form>
+    <script src="./HW! A.R.G_files/script.js.nedladdning"></script>
   </body>
 </html>
