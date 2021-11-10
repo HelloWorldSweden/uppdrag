@@ -10,7 +10,7 @@ h1 {
 
 body {
   background-color: #083549;
-  background-image: url("/images/stars.png");
+  background-image: url("images/stars.png");
   background-repeat: repeat;
   font-family: helvetica, arial, sans-serif;
   margin: 2em;
