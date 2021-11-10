@@ -1,0 +1,193 @@
+/* CSS files add styling rules to your content */
+
+
+h1 {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 4rem;
+  color: #fff;
+  margin-top: 5rem;
+}
+
+body {
+  background-color: #083549;
+  background-image: url("stars.png");
+  background-repeat: repeat;
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+@media only screen and (max-width: 425px) {
+  body {
+    margin: 0em;
+  }
+  .floating-text {
+    font-size: 3rem;
+    padding: 2rem;
+    margin: 0rem;
+  }
+}
+
+/* GRID LAYOUT*/
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  //grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+#card-display{
+  margin-bottom: 3rem;
+}
+
+.card {
+  color: #fff;
+  padding: 2rem;
+  font-size: 110%;
+  min-height: 360px;
+}
+
+.card-info {
+  grid-column: span 2;
+}
+
+.card-footer {
+  grid-column: span 3;
+  font-size: 80%;
+  color: #fff;
+  opacity: 50%;
+}
+
+.card-footer a {
+  color: #557b86;
+}
+
+.card-form {
+  grid-column: span 2;
+  height: auto;
+}
+
+.card-light-blue { background-color: #46AFB8; }
+.card-dark-blue { background-color: #057190; }
+.card-orange { background-color: #F29F4A; }
+.card-pink { background-color: #F16868; }
+
+.card-white {
+  background-color: #fff;
+  color: #057190;
+}
+
+.card-hello{
+  background-color: #057190; /*dark blue*/
+  //transform-style: preserve-3d;
+  padding: 0px;
+  min-height: 400px;
+}
+
+#card-display .card-hello:nth-child(even) {
+  background-color: #46AFB8; /*light blue*/
+}
+
+#card-display .card-hello:hover:nth-child(even) {
+  background-color: #F29F4A; 
+}
+
+.card-hello:hover {
+  background-color: #F16868;
+  transition: all .4s ease-in-out;
+}
+
+.card-front {
+  position: absolute;
+  backface-visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card-back {
+  position: absolute;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transform: rotateY(180deg);
+  width: 100%;
+}
+
+.card-back .cool-button, .card-back a {
+  margin: 0.5rem 3.5rem;
+}
+
+.card img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.greeting {
+  margin: 1rem 0rem;
+  font-size: 250%;
+}
+
+.greeting-from {
+  opacity: 0;
+  margin: 0rem 0rem 1rem 0rem;
+  font-size: 150%;
+}
+
+.greeting-display {
+  opacity: 0;
+  transition: all .4s ease-in-out;
+}
+
+.card-hello:hover .greeting-from {
+  opacity: 1;
+  transition: all .4s ease-in-out .5s;
+}
+
+.card-hello:hover .greeting-display {
+  opacity: 1;
+  transition: all .4s ease-in-out 1s;
+}
+
+.card-hello:hover .greeting {
+  font-size: 280%;
+  transition: all .4s ease-in-out;
+}
+
+.cool-button {
+  background-color: #fff; /* Green */
+  border: none;
+  color: #057190;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 10px;
+    transition: color .15s ease-in-out,
+      background-color .15s ease-in-out,
+      border-color .15s ease-in-out,
+      box-shadow .15s ease-in-out;
+}
+
+.badge-light {
+    color: #057190;
+    background-color: #f8f9fa;
+}
+
+#social-media-container {
+  display: flex;
+}
+#social-media-container a {
+  margin: 0.5rem;
+}
