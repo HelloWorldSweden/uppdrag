@@ -5,10 +5,10 @@
 Denna sida är landningssida för digitalt påskpyssel med Hello World! Påsken 2020.
 
 ### Setup
-* Hosting via Github Pages (https://helloworldsweden.github.io/easter-cards/)
-* Peka om domän https://create.helloworld.se/ till denna sida
-
-> Detta gällde under påsken 2020, men numera är domänen flyttad till uppdrag.helloworld.se och påskpysslet hittas på https://helloworldsweden.github.io/uppdrag/paskpyssel. Läs informationen i README-filen i roten av detta repo.
+* Hosting via Github Pages
+* Domän https://uppdrag.helloworld.se/ pekar på sidan https://helloworldsweden.github.io/uppdrag
+* Julpyssel-mappen kommer man då åt via https://uppdrag.helloworld.se/julpyssel
+* Läs informationen i README-filen i roten av detta repo.
 
 ### Resources
 
