@@ -1,0 +1,20 @@
+/* CSS files add styling rules to your content */
+
+
+h1 {
+  font-size: 4rem;
+  margin-top: 10rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: helvetica, arial, sans-serif;
+  color: #fff;
+}
+
+body {
+  background-color: #083549;
+  background-image: url("stars.png");
+  background-repeat: repeat;
+  font-family: helvetica, arial, sans-serif;
+  text-align: center;
+}
