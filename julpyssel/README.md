@@ -1,8 +1,8 @@
-# Hello World! Easter Cards
+# Hello World! Julpyssel
 
 ### Description
 
-Denna sida är landningssida för digitalt påskpyssel med Hello World! Påsken 2020.
+Denna sida är landningssida för digitalt julpyssel med Hello World!, baserat på Påskpysslet 2020.
 
 ### Setup
 * Hosting via Github Pages
