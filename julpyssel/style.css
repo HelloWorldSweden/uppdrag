@@ -77,7 +77,7 @@ body {
 
 .card-hello{
   background-color: #057190; /*dark blue*/
-  //transform-style: preserve-3d;
+  transform-style: preserve-3d;
   padding: 0px;
   min-height: 400px;
 }
