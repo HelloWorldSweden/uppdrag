@@ -52,15 +52,7 @@ inputs.forEach(input => {
   })
 })
 
-function decrypt(code){
-  const code_arr = []
-  for (var i = 0; i < code_arr.length; i++) {
-    code_arr = [code_arr, code.charAt(i) + 2]
-  }
-}
 
-
-}
 
 // Om du hittat hit innebär det att du verkligen har dykt djupt i DevTools
 // Grattis! Vet du hur du ska utnyttja denna information för att klara uppdraget?
