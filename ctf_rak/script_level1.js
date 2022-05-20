@@ -1,1 +1,1 @@
-console.log('Lösenordet: vitlöksbröd');
+console.log('Lösenordet: astronaut');

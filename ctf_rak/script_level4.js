@@ -10,7 +10,7 @@ const newDesc = `
   </p>
   <p class="center-text">
     <b>
-      Vad har hatt och fot, men saknar huvud och sko?
+      På vad dricker utomjordingarna sitt te?
     </b>
   </p>`
 
@@ -31,5 +31,5 @@ const laga = () => {
     }, 2000)
   }, 1000)
 
-  return {fel: "godis fast i servern", åtgärd: "plockar bort"}
+  return {fel: "Rymdskrot fast i servern", åtgärd: "plockar bort"}
 }

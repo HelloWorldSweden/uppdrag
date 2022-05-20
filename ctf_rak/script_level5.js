@@ -20,7 +20,7 @@ inputs.forEach(input => {
 })
 
 function prank(){
-  pranktext.innerHTML = "Här har du: mj}jv~| <br> HAHA! Så enkelt är det inte, jag har krypterat meddelandet! <br> För att klara nivån måste du hitta nyckeln till krypteringen"
+  pranktext.innerHTML = "Här har du: ~}xvsx{mrwp <br> HAHA! Så enkelt är det inte, jag har krypterat meddelandet! <br> För att klara nivån måste du hitta nyckeln till krypteringen"
   showstuff();
 }
 

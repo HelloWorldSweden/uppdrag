@@ -2482,11 +2482,10 @@ inputs.forEach(input => {
 // Grattis! Vet du hur du ska utnyttja denna information för att klara uppdraget?
 const levels = [
   {file: "level1_hej.html", code: "start"},
-  {file: "level2_hello.html", code: "vitlöksbröd"},
-  {file: "level3_bonjour.html", code: "äppelmos"},
-  {file: "level4_ciao.html", code: "badanka"},
-  {file: "level5_privet.html", code: "svamp"},
-  {file: "level5_privet.html", code: "en svamp"},
-  {file: "level5_privet.html", code: "svampen"},
-  {file: "klar.html", code: "datamus"}
+  {file: "level2_hello.html", code: "astronaut"},
+  {file: "level3_bonjour.html", code: "rymdresa"},
+  {file: "level4_ciao.html", code: "satellit"},
+  {file: "level5_privet.html", code: "tefat"},
+  {file: "level5_privet.html", code: "ett tefat"},
+  {file: "klar.html", code: "utomjording"}
 ]
