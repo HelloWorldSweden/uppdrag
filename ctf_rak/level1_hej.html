@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HW! CTF - Level 1</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Monoton&display=swap">
+    <!-- add website icon -->
+    <link rel="icon" href="https://cdn.glitch.com/9f283387-d235-4e18-8461-e5d9e2d2c5da%2Ffavicon.png?v=1593503631622">
+
+  </head>
+  <body class="main">
+    <!-- Huvudrubrik -->
+    <h1 id="head">
+      Level 1
+    </h1>
+
+    <!-- Beskrivning -->
+    <div class="plain-text">
+      <p>
+        Hej! Kul att ni ville komma på besök! I den här utmaningen så kommer ni att testas i sökande.
+        Hur bra är ni på att leta och rota? Jag har gömt ett lösenord någonstans.
+        Det är någonstans men jag tänker inte säga var.
+      </p>
+      <img class="center small-image" src="https://cdn.glitch.com/9f283387-d235-4e18-8461-e5d9e2d2c5da%2Fnote_level1.png?v=1593702826579" alt="'Jag har gömt ditt lösenord. Om du bara letar runt lite så bör du hitta det.'">
+      <p>
+      Tänk på att jag kanske inte gömt det hemma hos er utan att det kanske ligger digitalt någonstans.
+      </p>
+      <p class="center-text">
+        <b>
+           Försök hitta lösenordet!
+        </b>
+      </p>
+    </div>
+
+    <div id="hint" >
+      <button onclick="showHint()" id="hint-button">VISA HINT</button>
+      <p class="dold plain-text">
+        <b>HINT:</b>
+        <i>Om du letar runt bland flikarna i menyn i DevTools, kan du hitta något?
+          Du bör hitta rätt genom att bara läsa det som står när du klickar runt bland flikarna.
+          Det kan hjälpa att läsa om avsnittet <b>1. Intro</b> i DevTools-guiden.
+        </i>
+      </p>
+    </div>
+
+    <!-- Rutan med input -->
+    <div id="form">
+      <input type="text" placeholder="Lösenord" id="code" required/>
+      <button onclick="evaluateForm()" id="form-button">TESTA</button>
+    </div>
+    <script src="script.js"></script>
+    <script src="script_level1.js"></script>
+  </body>
+</html>
